@@ -55,3 +55,10 @@ type="application/x-webgl"></object>
 ```
 
 For more detailed info, visit http://iewebgl.com or read /WebSite2.0/Samples
+
+
+### Creators ###
+
+Ivan Modenov, http://www.linkedin.com/pub/ivan-modenov/49/600/8b0
+Sergey Velnikovskiy, mailto:vsergey3d@gmail.com
+Elena Velnikovskaya
