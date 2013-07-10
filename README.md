@@ -8,9 +8,9 @@ IEWebGL is a plugin for Microsoft Internet Explorer web browser, that adds suppo
 ### Build ###
 
 - install InnoSetup
-- clone, build using Microsoft Visual Studio 2012 using *.sln file under /src directory.
+- clone, build using Microsoft Visual Studio 2012 using *.sln file under `/Src` directory.
 - run makesetup.cmd
-- use iewebgl.exe under /bin directory
+- use iewebgl.exe under /Bin directory
 
 ### Usage ###
 
@@ -54,7 +54,7 @@ type="application/x-webgl"></object>
 </html>
 ```
 
-For more detailed info, visit http://iewebgl.com or read /WebSite2.0/Samples
+For more detailed info, visit http://iewebgl.com or read `/WebSite2.0/Samples`
 
 
 ### Creators ###
