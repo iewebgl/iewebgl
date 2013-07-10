@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<html>
+<head runat="server">
+    <title>IEWebGL - WebGL for Internet Explorer</title>
+    <link rel="icon" href="~/Imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Imgs/favicon.ico" type="image/x-icon">
+    <link href="~/Styles/design.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body>
+    <div class="title">
+    </div>
+    <div class="navigation">
+    </div>
+    <div class="main">
+        <form id="Form1" runat="server">
+        <div class="title">
+            <asp:HyperLink NavigateUrl="~/Default.aspx" runat="Server">
+                    <img class="img" width="300" height="100" alt="IEWebGL - WebGL for Internet Explorer" src="~/Imgs/logo.png" runat="Server">                
+            </asp:HyperLink>
+        </div>
+        <div class="navigation" style="padding: 0px;">
+            <div class="navigation-separator-left">
+            </div>
+            <div class="navigation-container-hidder">
+                <div class="navigation-container">
+                    <a runat="Server" href="~/Default.aspx">
+                        <div class="navigation-button-left">
+                            <p id="main">
+                                MAIN</p>
+                        </div>
+                    </a>
+                    <div class="navigation-separator-left">
+                    </div>
+                    <a runat="Server" href="~/Developer.aspx">
+                        <div class="navigation-button-left">
+                            <p id="developer">
+                                DEVELOPER</p>
+                        </div>
+                    </a>
+                    <div class="navigation-separator-left">
+                    </div>
+                    <a runat="Server" href="~/Engines.aspx">
+                        <div class="navigation-button-left">
+                            <p id="engines">
+                                ENGINES</p>
+                        </div>
+                    </a>
+                    <div class="navigation-separator-left">
+                    </div>
+                    <a runat="Server" href="~/About.aspx">
+                        <div class="navigation-button-left">
+                            <p id="about">
+                                ABOUT</p>
+                        </div>
+                    </a>
+                    <div class="navigation-separator-left">
+                    </div>
+                    <a runat="Server" href="~/Links.aspx">
+                        <div class="navigation-button-left">
+                            <p id="links">
+                                LINKS</p>
+                        </div>
+                    </a>
+                    <div class="navigation-separator-left">
+                    </div>
+                    <a runat="Server" href="~/Faq.aspx">
+                        <div class="navigation-button-left" style="padding: 0px 40px 0px 32px">
+                            <p id="faq">
+                                FAQ</p>
+                        </div>
+                    </a>
+                    <div class="navigation-separator-left">
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-separator-left">
+            </div>
+        </div>
+        <table class="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td style="width: 1px; overflow: hidden;">
+                </td>
+                <td class="v-separator">
+                </td>
+                <td class="content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </td>
+                <td class="v-separator">
+                </td>
+                <td class="info-bar" align="center">
+                    <div id="DownloadBtn" runat="Server">
+                        <div class="info-bar-content">
+                            <div class="block">
+                                <p>
+                                    IEWebGL is a plugin for Microsoft Internet Explorer web browser, that adds support
+                                    for WebGL - modern web 3D graphics standard.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div style="height: 7px; overflow: hidden;">
+                        </div>
+                        <a id="A1" class="download-button" href="~/Download.aspx" runat="server">Download IEWebGL</a>
+                        <div style="height: 6px; overflow: hidden;">
+                        </div>
+
+                    </div>
+                    <div id="DonateButton" runat="Server">
+                        <div class="info-bar-content">
+                            <div class="block">
+                                <p>
+                                    If you like this project, you can support it by donations.
+                                    Your donations help us to implement new WebGL extensions and other features.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div style="height: 7px; overflow: hidden;">
+                        </div>
+
+                        <a href="PayPal/PayPalProxy.aspx">
+                            <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border=0 alt="PayPal - The safer, easier way to pay online!"/>
+                        </a>
+                    </div>
+                    <div style="height: 20px; overflow: hidden;">
+                    </div>
+
+                    <div class="contacts-block">
+                    </div>
+                </td>
+                <td class="v-separator">
+                </td>
+            </tr>
+        </table>
+        <div class="footer-block">
+        </div>
+        </form>
+    </div>
+    <div class="social-icons">
+        <div class="social-icons-container">
+            <div class="social-icons-block">
+            </div>
+
+            <a href="http://www.twitter.com/iewebgl">
+                <div class="social-icons-button">
+                    <img class="social-icons-img" width="16" height="16" alt="" src="~/Imgs/twitter.png"
+                        runat="Server"></div>
+            </a>
+            <div class="social-icons-separator">
+            </div>
+            <a href="mailto:info@iewebgl.com">
+                <div class="social-icons-button">
+                    <img class="social-icons-img" width="16" height="16" alt="" src="~/Imgs/email.png"
+                        runat="Server"></div>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    <div class="footer-full">
+        <p class="copyright-text">
+            Copyright &#169; 2011 IEWebGL Team. All rights reserved.</p>
+    </div>
+    <!-- Yandex.Metrika counter -->
+    <div style="display: none;">
+        <script type="text/javascript">
+            (function (w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter7743397 = new Ya.Metrika({ id: 7743397, enableAll: true });
+                    }
+                    catch (e) { }
+                });
+            })(window, 'yandex_metrika_callbacks');
+        </script>
+    </div>
+
+
+    <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+    <noscript>
+        <div>
+            <img src="//mc.yandex.ru/watch/7743397" style="position: absolute; left: -9999px;"
+                alt="" />
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-8716203134658398";
+        /* IEWebGL_MainAd */
+        google_ad_slot = "6805103813";
+        google_ad_width = 728;
+        google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23892528-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+</body>
+</html>

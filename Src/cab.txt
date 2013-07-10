@@ -1,0 +1,10 @@
+;*** MakeCAB Directive file example
+.OPTION EXPLICIT                     ; Generate errors on variable typos
+.Set MaxDiskSize=512000000
+.Set DiskDirectoryTemplate=
+.Set CabinetNameTemplate=iewebgl.cab
+
+.Set Cabinet=on
+.Set Compress=on
+iewebgl.inf
+iewebgl.exe

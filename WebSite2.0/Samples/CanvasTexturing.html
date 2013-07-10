@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../Styles/Samples.css"/>
+    <script src="../Scripts/webglhelper.js" type="text/javascript"></script>
+    <script src="../Scripts/EventHandling.js" type="text/javascript"></script>
+    <script src="../Scripts/Common.js" type="text/javascript"></script>
+    <script src="../Scripts/FPSCounter.js" type="text/javascript"></script>
+    <script src="../Scripts/sylvester.js" type="text/javascript"></script> 
+    <script src="../Scripts/glUtils.js" type="text/javascript"></script>
+    <script src="../Scripts/GeometryUtils.js" type="text/javascript"></script>
+    <script src="../Scripts/MatrixUtils.js" type="text/javascript"></script>
+    <script src="CanvasTexturing.js" type="text/javascript"></script>
+    <!-- Vertex shader program -->
+    <script id="shader-vs" type="x-shader/x-vertex">
+        precision highp float;
+
+        attribute vec3 aVertexPosition;
+        attribute vec3 aVertexNormal;
+        attribute vec2 aVertexTextureCoord;
+      
+        varying vec2 vTextureCoord;
+        varying float vDiffuse;
+
+        uniform mat4 uWMatrix;
+        uniform mat4 uWVPMatrix;
+        uniform vec3 uLightDir;
+    
+        void main(void) {
+            gl_Position = uWVPMatrix * vec4(aVertexPosition, 1.0);
+
+            vTextureCoord = aVertexTextureCoord;
+
+            vec3 vNormal = normalize(mat3(uWMatrix) * aVertexNormal);
+            vec3 vLightDir = normalize(uLightDir);
+            vDiffuse = clamp(dot(vNormal, vLightDir), 0.0, 1.0) * 0.5 + 0.5;
+        }
+    </script>
+    <!-- Fragment shader program -->
+    <script id="shader-fs" type="x-shader/x-fragment">
+        precision highp float;
+
+        varying vec2 vTextureCoord;
+        varying float vDiffuse;
+      
+        uniform sampler2D uSampler;
+      
+        void main(void) {
+            vec4 texelColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+            gl_FragColor = vec4(texelColor.rgb * vDiffuse, 1.0);
+        }
+    </script>
+</head>
+<body>
+    <div id="WebGLCanvasContainer">
+        <div id="FPSCounter"></div>
+        <div id="Canvas2DContainer">
+            <canvas id="Canvas2D" width="128px" height="128px"></canvas>
+        </div>
+        <script id="WebGLCanvasCreationScript" type="text/javascript">
+            WebGLHelper.CreateGLCanvasInline('WebGLCanvas', OnCanvasCreated, OnCanvasFailed)
+        </script>
+    </div>
+</body>
+</html>

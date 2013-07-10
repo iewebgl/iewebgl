@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9B966420-28F4-4346-A39A-AE24F522EFE8}</ProjectGuid>
+    <Keyword>AtlProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\BuildData\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>..\3RDParty\MSHTML;..\3RDParty\Angle\include;..\3RDParty\Angle\src;..\3RDParty\DX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3RDParty\MSHTML;..\3RDParty\Angle\lib\x64\Debug;..\3RDParty\DX\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\BuildData\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>..\3RDParty\MSHTML;..\3RDParty\Angle\include;..\3RDParty\Angle\src;..\3RDParty\DX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3RDParty\MSHTML;..\3RDParty\Angle\lib\Win32\Debug;..\3RDParty\DX\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\BuildData\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>..\3RDParty\MSHTML;..\3RDParty\Angle\include;..\3RDParty\Angle\src;..\3RDParty\DX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3RDParty\MSHTML;..\3RDParty\Angle\lib\x64\Release;..\3RDParty\DX\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\BuildData\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>..\3RDParty\MSHTML;..\3RDParty\Angle\include;..\3RDParty\Angle\src;..\3RDParty\DX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3RDParty\MSHTML;..\3RDParty\Angle\lib\Win32\Release;..\3RDParty\DX\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>GL_APICALL=extern "C";GL_APIENTRY=__stdcall;EGLAPI=extern "C";EGLAPIENTRY=__stdcall;_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;_DEBUG;_USRDLL;GL_GLEXT_PROTOTYPES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>IEWebGL_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>IEWebGL_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>IEWebGL_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)IEWebGL.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\IEWebGL.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid_amd64.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+      <AdditionalOptions>/ignore:4204 %(AdditionalOptions)</AdditionalOptions>
+      <PerUserRedirection>true</PerUserRedirection>
+      <UACUIAccess>false</UACUIAccess>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>GL_APICALL=extern "C";GL_APIENTRY=__stdcall;EGLAPI=extern "C";EGLAPIENTRY=__stdcall;_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;_DEBUG;_USRDLL;GL_GLEXT_PROTOTYPES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>IEWebGL_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>IEWebGL_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>IEWebGL_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)IEWebGL.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\IEWebGL.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;odbc32.lib;odbccp32.lib;</AdditionalDependencies>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+      <AdditionalOptions>/ignore:4204 %(AdditionalOptions)</AdditionalOptions>
+      <PerUserRedirection>true</PerUserRedirection>
+      <UACUIAccess>false</UACUIAccess>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>GL_APICALL=extern "C";GL_APIENTRY=__stdcall;EGLAPI=extern "C";EGLAPIENTRY=__stdcall;_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;NDEBUG;_USRDLL;GL_GLEXT_PROTOTYPES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>IEWebGL_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>IEWebGL_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>IEWebGL_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)IEWebGL.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\IEWebGL.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid_amd64.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+      <AdditionalOptions>/ignore:4204 %(AdditionalOptions)</AdditionalOptions>
+      <PerUserRedirection>true</PerUserRedirection>
+      <UACUIAccess>false</UACUIAccess>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>GL_APICALL=extern "C";GL_APIENTRY=__stdcall;EGLAPI=extern "C";EGLAPIENTRY=__stdcall;_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;NDEBUG;_USRDLL;GL_GLEXT_PROTOTYPES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>IEWebGL_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>IEWebGL_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>IEWebGL_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)IEWebGL.tlb</TypeLibraryName>
+      <DllDataFileName>
+      </DllDataFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\IEWebGL.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RegisterOutput>true</RegisterOutput>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+      <AdditionalOptions>/ignore:4204 %(AdditionalOptions)</AdditionalOptions>
+      <PerUserRedirection>true</PerUserRedirection>
+      <UACUIAccess>false</UACUIAccess>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DrawUtils.cpp" />
+    <ClCompile Include="ECMAConvertion.cpp" />
+    <ClCompile Include="IEWebGL.cpp" />
+    <ClCompile Include="IEWebGLBHO.cpp" />
+    <ClCompile Include="IEWebGL_i.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="InvokeHelper.cpp" />
+    <ClCompile Include="JSObjectImpl.cpp" />
+    <ClCompile Include="PluginUtils.cpp" />
+    <ClCompile Include="ScriptArray.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TlsData.cpp" />
+    <ClCompile Include="TypedArray\ArrayBuffer.cpp" />
+    <ClCompile Include="TypedArray\DataArrayView.cpp" />
+    <ClCompile Include="TypedArray\Float32Array.cpp" />
+    <ClCompile Include="TypedArray\Float64Array.cpp" />
+    <ClCompile Include="TypedArray\Int16Array.cpp" />
+    <ClCompile Include="TypedArray\Int32Array.cpp" />
+    <ClCompile Include="TypedArray\Int8Array.cpp" />
+    <ClCompile Include="TypedArray\TypedArrayMaker.cpp" />
+    <ClCompile Include="TypedArray\Uint16Array.cpp" />
+    <ClCompile Include="TypedArray\Uint32Array.cpp" />
+    <ClCompile Include="TypedArray\Uint8Array.cpp" />
+    <ClCompile Include="WebGLPlugin.cpp" />
+    <ClCompile Include="WebGL\WebGLActiveInfo.cpp" />
+    <ClCompile Include="WebGL\WebGLBuffer.cpp" />
+    <ClCompile Include="WebGL\WebGLContextAttributes.cpp" />
+    <ClCompile Include="WebGL\WebGLExtensions.cpp" />
+    <ClCompile Include="WebGL\WebGLFramebuffer.cpp" />
+    <ClCompile Include="WebGL\WebGLFramebufferAttachment.cpp" />
+    <ClCompile Include="WebGL\WebGLObjectPointer.cpp" />
+    <ClCompile Include="WebGL\WebGLPrimaryFBO.cpp" />
+    <ClCompile Include="WebGL\WebGLProgram.cpp" />
+    <ClCompile Include="WebGL\WebGLRenderbuffer.cpp" />
+    <ClCompile Include="WebGL\WebGLRenderingContext.cpp" />
+    <ClCompile Include="WebGL\WebGLShader.cpp" />
+    <ClCompile Include="WebGL\WebGLShaderPrecisionFormat.cpp" />
+    <ClCompile Include="WebGL\WebGLTexelConversions.cpp" />
+    <ClCompile Include="WebGL\WebGLTexture.cpp" />
+    <ClCompile Include="WebGL\WebGLUniformLocation.cpp" />
+    <ClCompile Include="WebGL\WebGLUtils.cpp" />
+    <ClCompile Include="xdlldata.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dllmain.h" />
+    <ClInclude Include="DrawUtils.h" />
+    <ClInclude Include="ECMAConvertion.h" />
+    <ClInclude Include="IEWebGLBHO.h" />
+    <ClInclude Include="IEWebGL_i.h" />
+    <ClInclude Include="InvokeHelper.h" />
+    <ClInclude Include="IPluginObj.h" />
+    <ClInclude Include="JSObjectImpl.h" />
+    <ClInclude Include="PluginUtils.h" />
+    <ClInclude Include="ScriptArray.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TlsData.h" />
+    <ClInclude Include="TypedArray\ArrayBuffer.h" />
+    <ClInclude Include="TypedArray\DataArrayView.h" />
+    <ClInclude Include="TypedArray\Float32Array.h" />
+    <ClInclude Include="TypedArray\Float64Array.h" />
+    <ClInclude Include="TypedArray\Int16Array.h" />
+    <ClInclude Include="TypedArray\Int32Array.h" />
+    <ClInclude Include="TypedArray\Int8Array.h" />
+    <ClInclude Include="TypedArray\TypedArrayMaker.h" />
+    <ClInclude Include="TypedArray\TypedArrayView.h" />
+    <ClInclude Include="TypedArray\Uint16Array.h" />
+    <ClInclude Include="TypedArray\Uint32Array.h" />
+    <ClInclude Include="TypedArray\Uint8Array.h" />
+    <ClInclude Include="WebGLPlugin.h" />
+    <ClInclude Include="WebGL\WebGLActiveInfo.h" />
+    <ClInclude Include="WebGL\WebGLBuffer.h" />
+    <ClInclude Include="WebGL\WebGLContextAttributes.h" />
+    <ClInclude Include="WebGL\WebGLExtensions.h" />
+    <ClInclude Include="WebGL\WebGLFramebuffer.h" />
+    <ClInclude Include="WebGL\WebGLFramebufferAttachment.h" />
+    <ClInclude Include="WebGL\WebGLGetConcrete.h" />
+    <ClInclude Include="WebGL\WebGLObjectPointer.h" />
+    <ClInclude Include="WebGL\WebGLPrimaryFBO.h" />
+    <ClInclude Include="WebGL\WebGLProgram.h" />
+    <ClInclude Include="WebGL\WebGLRCConstants.h" />
+    <ClInclude Include="WebGL\WebGLRenderbuffer.h" />
+    <ClInclude Include="WebGL\WebGLRenderingContext.h" />
+    <ClInclude Include="WebGL\WebGLShader.h" />
+    <ClInclude Include="WebGL\WebGLShaderPrecisionFormat.h" />
+    <ClInclude Include="WebGL\WebGLTexelConversions.h" />
+    <ClInclude Include="WebGL\WebGLTexture.h" />
+    <ClInclude Include="WebGL\WebGLUniformLocation.h" />
+    <ClInclude Include="WebGL\WebGLUtils.h" />
+    <ClInclude Include="xdlldata.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IEWebGL.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\UnitTest\Common.js" />
+    <None Include="..\UnitTest\qunit\qunit.css" />
+    <None Include="..\UnitTest\qunit\qunit.js" />
+    <None Include="..\UnitTest\TypedArray\ArrayBuffer.js" />
+    <None Include="..\UnitTest\TypedArray\Common.js" />
+    <None Include="..\UnitTest\TypedArray\DataView.js" />
+    <None Include="..\UnitTest\TypedArray\Float32Array.js" />
+    <None Include="..\UnitTest\TypedArray\Float64Array.js" />
+    <None Include="..\UnitTest\TypedArray\Int16Array.js" />
+    <None Include="..\UnitTest\TypedArray\Int32Array.js" />
+    <None Include="..\UnitTest\TypedArray\Int8Array.js" />
+    <None Include="..\UnitTest\TypedArray\Mixed.js" />
+    <None Include="..\UnitTest\TypedArray\PerfTest.html" />
+    <None Include="..\UnitTest\TypedArray\TypedArray.html" />
+    <None Include="..\UnitTest\TypedArray\Uint16Array.js" />
+    <None Include="..\UnitTest\TypedArray\Uint32Array.js" />
+    <None Include="..\UnitTest\TypedArray\Uint8Array.js" />
+    <None Include="..\UnitTest\WebGL\Common.js" />
+    <None Include="..\UnitTest\WebGL\PerfTest.html" />
+    <None Include="..\UnitTest\WebGL\WebGL.html" />
+    <None Include="..\UnitTest\WebGL\WebGLBuffer.js" />
+    <None Include="..\UnitTest\WebGL\WebGLExtensions.js" />
+    <None Include="..\UnitTest\WebGL\WebGLFramebuffer.js" />
+    <None Include="..\UnitTest\WebGL\WebGLFunctional.js" />
+    <None Include="..\UnitTest\WebGL\WebGLProgram.js" />
+    <None Include="..\UnitTest\WebGL\WebGLRenderbuffer.js" />
+    <None Include="..\UnitTest\WebGL\WebGLRenderingContext.js" />
+    <None Include="..\UnitTest\WebGL\WebGLShader.js" />
+    <None Include="..\UnitTest\WebGL\WebGLTexture.js" />
+    <None Include="..\UnitTest\WebGL\WebGL_API.js" />
+    <None Include="..\WebGLMain.html" />
+    <None Include="..\WebGLPlugin.html" />
+    <None Include="IEWebGL.def" />
+    <None Include="IEWebGL.rgs" />
+    <None Include="IEWebGLBHO.rgs" />
+    <None Include="ReadMe.txt" />
+    <None Include="WebGLContext.bmp" />
+    <None Include="webglhelper.js" />
+    <None Include="WebGLPlugin.bmp" />
+    <None Include="WebGLPlugin.rgs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="IEWebGL.idl" />
+    <Midl Include="TypedArray\TypedArray.idl">
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TypedArray_i.h</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TypedArray_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TypedArray_i.c</InterfaceIdentifierFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TypedArray_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TypedArray_p.c</ProxyFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TypedArray_p.c</ProxyFileName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)TypedArray.tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)TypedArray.tlb</TypeLibraryName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TypedArray_i.h</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TypedArray_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TypedArray_i.c</InterfaceIdentifierFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TypedArray_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TypedArray_p.c</ProxyFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TypedArray_p.c</ProxyFileName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)TypedArray.tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)TypedArray.tlb</TypeLibraryName>
+    </Midl>
+    <Midl Include="WebGL\WebGL.idl">
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WebGL_i.h</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WebGL_i.h</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WebGL_i.h</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WebGL_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WebGL_i.c</InterfaceIdentifierFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WebGL_i.c</InterfaceIdentifierFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WebGL_i.c</InterfaceIdentifierFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WebGL_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WebGL_p.c</ProxyFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WebGL_p.c</ProxyFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WebGL_p.c</ProxyFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WebGL_p.c</ProxyFileName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)WebGL.tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)WebGL.tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)WebGL.tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)WebGL.tlb</TypeLibraryName>
+    </Midl>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

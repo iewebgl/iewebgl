@@ -1,0 +1,187 @@
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+import "mshtml.idl";
+
+[
+	object,
+	uuid(96796261-491B-4026-B5BD-ABE212908B3E),
+	dual,
+	pointer_default(unique)
+]
+interface IJSObject : IDispatch
+{
+	[id(1)] HRESULT toString([out, retval]BSTR* retVal);
+};
+
+
+[
+	object,
+	uuid(2680D4E8-4474-4B47-9E3F-05F385E9FCF8),
+	dual,
+	pointer_default(unique)
+]
+interface IArrayBuffer : IJSObject
+{
+	[id(101), propget] HRESULT byteLength([out, retval] ULONG* retVal);
+
+	[id(102), propget, hidden, nonbrowsable, restricted] HRESULT mem([out, retval]byte** mem);
+};
+
+
+[
+	object,
+	uuid(20BA6882-1CC8-4E86-AB77-4EFF85F6C0C3),
+	dual,
+	pointer_default(unique)
+]
+interface IArrayBufferView : IJSObject
+{
+	[id(101), propget] HRESULT buffer([out, retval] IArrayBuffer** retVal);
+	[id(102), propget] HRESULT byteOffset([out, retval] ULONG* retVal);
+	[id(103), propget] HRESULT byteLength([out, retval] ULONG* retVal);
+
+	[id(104), propget, hidden, nonbrowsable, restricted] HRESULT mem([out, retval]byte** mem);
+	[id(105), hidden, nonbrowsable, restricted] HRESULT put_modified([in]BOOL isModified);
+	[id(106), hidden, nonbrowsable, restricted] HRESULT get_modified([out, retval]BOOL* retVal);
+};
+
+[
+	object,
+	uuid(CF72AD82-359F-432A-9ED6-589830418751),
+	dual,
+	pointer_default(unique)
+]
+interface ITypedArrayBufferView : IArrayBufferView
+{
+	[id(201), propget] HRESULT BYTES_PER_ELEMENT([out, retval] ULONG* retVal);
+
+	[id(202), propget] HRESULT length([out, retval] ULONG* retVal);
+
+    [id(203)] HRESULT set([in]IDispatch* array, [in, optional]VARIANT offset);
+    [id(204)] HRESULT subarray([in]long begin, [in, optional]VARIANT end, [out, retval]ITypedArrayBufferView** retVal);
+
+	[id(205), propget, hidden, nonbrowsable, restricted] HRESULT item([in]ULONG index, [out, retval]VARIANT* retVal);
+};
+
+[
+	object,
+	uuid(7E91334D-695D-491E-BC09-5291C06A233A),
+	dual,
+	pointer_default(unique)
+]
+interface IInt8Array : ITypedArrayBufferView
+{
+
+};
+
+
+[
+	object,
+	uuid(5B0BEBA6-3CEB-48B7-9047-A6E1D01DF054),
+	dual,
+	pointer_default(unique)
+]
+interface IUint8Array : ITypedArrayBufferView
+{
+
+};
+
+
+[
+	object,
+	uuid(E48BDB2F-6C95-4679-AD39-F7D080B10D50),
+	dual,
+	pointer_default(unique)
+]
+interface IInt16Array : ITypedArrayBufferView
+{
+};
+
+
+[
+	object,
+	uuid(2760D39B-F0C5-4616-88C4-F02FEF95AFEA),
+	dual,
+	pointer_default(unique)
+]
+interface IUint16Array : ITypedArrayBufferView
+{
+};
+
+
+[
+	object,
+	uuid(4014EF1F-B2EC-4CCD-8EA9-FBE3AE02FE5D),
+	dual,
+	pointer_default(unique)
+]
+interface IInt32Array : ITypedArrayBufferView
+{
+};
+
+
+[
+	object,
+	uuid(190F92F7-F4EF-4689-A753-9566E620153F),
+	dual,
+	pointer_default(unique)
+]
+interface IUint32Array : ITypedArrayBufferView
+{
+};
+
+
+[
+	object,
+	uuid(718E17BF-737B-42FE-A77F-E3AC34E4DD7C),
+	dual,
+	pointer_default(unique)
+]
+interface IFloat32Array : ITypedArrayBufferView
+{
+};
+
+
+[
+	object,
+	uuid(3EEF1A4A-1B11-49A3-9C1F-94EDC2B189F6),
+	dual,
+	pointer_default(unique)
+]
+interface IFloat64Array : ITypedArrayBufferView
+{
+};
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(B058D4CD-FD1C-4E00-94E4-9D9428A0BC6C),
+	dual,
+	pointer_default(unique)
+]
+interface IDataArrayView : IArrayBufferView
+{
+    [id(201)] HRESULT getInt8([in]ULONG byteOffset, [out, retval]small* retVal);
+    [id(202)] HRESULT getUint8([in]ULONG, [out, retval]char* retVal);
+    [id(203)] HRESULT getInt16([in]ULONG byteOffset, [in, optional]VARIANT littleEndian, [out, retval]SHORT* retVal);
+    [id(204)] HRESULT getUint16([in]ULONG byteOffset, [in, optional]VARIANT littleEndian, [out, retval]USHORT* retVal);
+    [id(205)] HRESULT getInt32([in]ULONG byteOffset, [in, optional]VARIANT littleEndian, [out, retval]LONG* retVal);
+    [id(206)] HRESULT getUint32([in]ULONG byteOffset, [in, optional]VARIANT littleEndian, [out, retval]ULONG* retVal);
+    [id(207)] HRESULT getFloat32([in]ULONG byteOffset, [in, optional]VARIANT littleEndian, [out, retval]float* retVal);
+    [id(208)] HRESULT getFloat64([in]ULONG byteOffset, [in, optional]VARIANT littleEndian, [out, retval]double* retVal);
+
+
+    [id(209)] HRESULT setInt8([in]ULONG byteOffset, [in]VARIANT value);
+    [id(210)] HRESULT setUint8([in]ULONG byteOffset, [in]VARIANT value);
+    [id(211)] HRESULT setInt16([in]ULONG byteOffset, [in]VARIANT value, [in, optional]VARIANT littleEndian);
+	[id(212)] HRESULT setUint16([in]ULONG byteOffset, [in]VARIANT, [in, optional]VARIANT littleEndian);
+    [id(213)] HRESULT setInt32([in]ULONG byteOffset, [in]VARIANT value, [in, optional]VARIANT littleEndian);
+    [id(214)] HRESULT setUint32([in]ULONG byteOffset, [in]VARIANT value, [in, optional]VARIANT littleEndian);
+    [id(215)] HRESULT setFloat32([in]ULONG byteOffset, [in]VARIANT value, [in, optional]VARIANT littleEndian);
+    [id(216)] HRESULT setFloat64([in]ULONG byteOffset, [in]VARIANT value, [in, optional]VARIANT littleEndian);
+};
+
+

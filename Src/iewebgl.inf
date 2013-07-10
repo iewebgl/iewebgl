@@ -1,0 +1,12 @@
+[version]
+    signature="$CHICAGO$"
+    AdvancedINF=2.0
+
+[Deployment]
+    InstallScope=user
+	  
+[Setup Hooks]
+    InnoSetupHook=InnoSetupHook
+
+[InnoSetupHook]
+    run=%EXTRACT_DIR%\iewebgl.exe /VERYSILENT

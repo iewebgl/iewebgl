@@ -1,0 +1,822 @@
+// IEWebGL.idl : IDL source for IEWebGL
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (IEWebGL.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+import "mshtml.idl";
+
+#include "../TypedArray/TypedArray.idl"
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(789B00A8-6108-4AA3-A37A-A117ED782D73),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLObject : IJSObject
+{
+
+};
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(F0C3A028-4B0F-40B9-A81D-3894D62BCBEF),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLBuffer : IWebGLObject
+{
+	
+};
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(60B196E5-B244-4216-9F4C-D6839EB1297D),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLFramebuffer : IWebGLObject
+{
+};
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(1D7536F5-82A5-4A36-8F95-C5C4BCE1D410),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLShader : IWebGLObject
+{
+};
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(E6F9DD9E-A066-4FBF-B252-7120007A49C5),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLProgram : IWebGLObject
+{
+};
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(66FD3A8F-BD05-4F92-90FB-B0CC425FE293),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLRenderbuffer : IWebGLObject
+{
+};
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(3DB713CF-263B-4AAF-B107-0BC4515BAE84),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLTexture : IWebGLObject
+{
+};
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(36DD7F98-156D-4A1D-A3BD-CF89796D78B2),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLUniformLocation : IDispatch
+{
+};
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(41C94606-D923-407C-BDD9-8CF6D9DD1619),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLActiveInfo : IJSObject
+{
+	[id(101), propget] HRESULT size([out, retval] LONG* retVal);
+	[id(102), propget] HRESULT type([out, retval] ULONG* retVal);
+	[id(103), propget] HRESULT name([out, retval] BSTR* retVal);
+};
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(47E629D7-62C1-46C9-9113-85176A97A360),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLShaderPrecisionFormat : IJSObject
+{
+	[id(101), propget] HRESULT rangeMin([out, retval] LONG* retVal);
+	[id(102), propget] HRESULT rangeMax([out, retval] LONG* retVal);
+	[id(103), propget] HRESULT precision([out, retval] LONG* retVal);
+};
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(76E43B1A-9D20-4C64-BD58-BCDD21B8A8A9),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IWebGLContextAttributes : IJSObject
+{
+	[id(101), propget] HRESULT alpha([out, retval] VARIANT* retVal);
+	[id(102), propget] HRESULT depth([out, retval] VARIANT* retVal);
+	[id(103), propget] HRESULT stencil([out, retval] VARIANT* retVal);
+	[id(104), propget] HRESULT antialias([out, retval] VARIANT* retVal);
+	[id(105), propget] HRESULT premultipliedAlpha([out, retval] VARIANT* retVal);
+	[id(106), propget] HRESULT preserveDrawingBuffer([out, retval] VARIANT* retVal);
+};
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(D0291412-9F48-4300-8AA8-38E030477E77),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLRCConstants : IJSObject
+{
+	/* ClearBufferMask */
+    [id(101), propget] HRESULT DEPTH_BUFFER_BIT([out, retval]ULONG* retVal);
+    [id(102), propget] HRESULT STENCIL_BUFFER_BIT([out, retval]ULONG* retVal);
+    [id(103), propget] HRESULT COLOR_BUFFER_BIT([out, retval]ULONG* retVal);
+    
+    /* BeginMode */
+    [id(104), propget] HRESULT POINTS([out, retval]ULONG* retVal);
+    [id(105), propget] HRESULT LINES([out, retval]ULONG* retVal);
+    [id(106), propget] HRESULT LINE_LOOP([out, retval]ULONG* retVal);
+    [id(107), propget] HRESULT LINE_STRIP([out, retval]ULONG* retVal);
+    [id(108), propget] HRESULT TRIANGLES([out, retval]ULONG* retVal);
+    [id(109), propget] HRESULT TRIANGLE_STRIP([out, retval]ULONG* retVal);
+    [id(110), propget] HRESULT TRIANGLE_FAN([out, retval]ULONG* retVal);
+    
+    /* AlphaFunction (not supported in ES20) */
+    /*      NEVER */
+    /*      LESS */
+    /*      EQUAL */
+    /*      LEQUAL */
+    /*      GREATER */
+    /*      NOTEQUAL */
+    /*      GEQUAL */
+    /*      ALWAYS */
+    
+    /* BlendingFactorDest */
+    [id(111), propget] HRESULT ZERO([out, retval]ULONG* retVal);
+    [id(112), propget] HRESULT ONE([out, retval]ULONG* retVal);
+    [id(113), propget] HRESULT SRC_COLOR([out, retval]ULONG* retVal);
+    [id(114), propget] HRESULT ONE_MINUS_SRC_COLOR([out, retval]ULONG* retVal);
+    [id(115), propget] HRESULT SRC_ALPHA([out, retval]ULONG* retVal);
+    [id(116), propget] HRESULT ONE_MINUS_SRC_ALPHA([out, retval]ULONG* retVal);
+    [id(117), propget] HRESULT DST_ALPHA([out, retval]ULONG* retVal);
+    [id(118), propget] HRESULT ONE_MINUS_DST_ALPHA([out, retval]ULONG* retVal);
+    
+    /* BlendingFactorSrc */
+    /*      ZERO */
+    /*      ONE */
+    [id(119), propget] HRESULT DST_COLOR([out, retval]ULONG* retVal);
+    [id(120), propget] HRESULT ONE_MINUS_DST_COLOR([out, retval]ULONG* retVal);
+    [id(121), propget] HRESULT SRC_ALPHA_SATURATE([out, retval]ULONG* retVal);
+    /*      SRC_ALPHA */
+    /*      ONE_MINUS_SRC_ALPHA */
+    /*      DST_ALPHA */
+    /*      ONE_MINUS_DST_ALPHA */
+    
+    /* BlendEquationSeparate */
+    [id(122), propget] HRESULT FUNC_ADD([out, retval]ULONG* retVal);
+    [id(123), propget] HRESULT BLEND_EQUATION([out, retval]ULONG* retVal);
+    [id(124), propget] HRESULT BLEND_EQUATION_RGB([out, retval]ULONG* retVal);	/* same as BLEND_EQUATION */
+    [id(125), propget] HRESULT BLEND_EQUATION_ALPHA([out, retval]ULONG* retVal);
+    
+    /* BlendSubtract */
+    [id(126), propget] HRESULT FUNC_SUBTRACT([out, retval]ULONG* retVal);
+    [id(127), propget] HRESULT FUNC_REVERSE_SUBTRACT([out, retval]ULONG* retVal);
+    
+    /* Separate Blend Functions */
+    [id(128), propget] HRESULT BLEND_DST_RGB([out, retval]ULONG* retVal);
+    [id(129), propget] HRESULT BLEND_SRC_RGB([out, retval]ULONG* retVal);
+    [id(130), propget] HRESULT BLEND_DST_ALPHA([out, retval]ULONG* retVal);
+    [id(131), propget] HRESULT BLEND_SRC_ALPHA([out, retval]ULONG* retVal);
+    [id(132), propget] HRESULT CONSTANT_COLOR([out, retval]ULONG* retVal);
+    [id(133), propget] HRESULT ONE_MINUS_CONSTANT_COLOR([out, retval]ULONG* retVal);
+    [id(134), propget] HRESULT CONSTANT_ALPHA([out, retval]ULONG* retVal);
+    [id(135), propget] HRESULT ONE_MINUS_CONSTANT_ALPHA([out, retval]ULONG* retVal);
+    [id(136), propget] HRESULT BLEND_COLOR([out, retval]ULONG* retVal);
+    
+    /* Buffer Objects */
+    [id(137), propget] HRESULT ARRAY_BUFFER([out, retval]ULONG* retVal);
+    [id(138), propget] HRESULT ELEMENT_ARRAY_BUFFER([out, retval]ULONG* retVal);
+    [id(139), propget] HRESULT ARRAY_BUFFER_BINDING([out, retval]ULONG* retVal);
+    [id(140), propget] HRESULT ELEMENT_ARRAY_BUFFER_BINDING([out, retval]ULONG* retVal);
+    
+    [id(141), propget] HRESULT STREAM_DRAW([out, retval]ULONG* retVal);
+    [id(142), propget] HRESULT STATIC_DRAW([out, retval]ULONG* retVal);
+    [id(143), propget] HRESULT DYNAMIC_DRAW([out, retval]ULONG* retVal);
+    
+    [id(144), propget] HRESULT BUFFER_SIZE([out, retval]ULONG* retVal);
+    [id(145), propget] HRESULT BUFFER_USAGE([out, retval]ULONG* retVal);
+    
+    [id(146), propget] HRESULT CURRENT_VERTEX_ATTRIB([out, retval]ULONG* retVal);
+    
+    /* CullFaceMode */
+    [id(147), propget] HRESULT FRONT([out, retval]ULONG* retVal);
+    [id(148), propget] HRESULT BACK([out, retval]ULONG* retVal);
+    [id(149), propget] HRESULT FRONT_AND_BACK([out, retval]ULONG* retVal);
+    
+    /* DepthFunction */
+    /*      NEVER */
+    /*      LESS */
+    /*      EQUAL */
+    /*      LEQUAL */
+    /*      GREATER */
+    /*      NOTEQUAL */
+    /*      GEQUAL */
+    /*      ALWAYS */
+    
+    /* EnableCap */
+    /* TEXTURE_2D */
+    [id(150), propget] HRESULT CULL_FACE([out, retval]ULONG* retVal);
+    [id(151), propget] HRESULT BLEND([out, retval]ULONG* retVal);
+    [id(152), propget] HRESULT DITHER([out, retval]ULONG* retVal);
+    [id(153), propget] HRESULT STENCIL_TEST([out, retval]ULONG* retVal);
+    [id(154), propget] HRESULT DEPTH_TEST([out, retval]ULONG* retVal);
+    [id(155), propget] HRESULT SCISSOR_TEST([out, retval]ULONG* retVal);
+    [id(156), propget] HRESULT POLYGON_OFFSET_FILL([out, retval]ULONG* retVal);
+    [id(157), propget] HRESULT SAMPLE_ALPHA_TO_COVERAGE([out, retval]ULONG* retVal);
+    [id(158), propget] HRESULT SAMPLE_COVERAGE([out, retval]ULONG* retVal);
+    
+    /* ErrorCode */
+    [id(159), propget] HRESULT NO_ERROR([out, retval]ULONG* retVal);
+    [id(160), propget] HRESULT INVALID_ENUM([out, retval]ULONG* retVal);
+    [id(161), propget] HRESULT INVALID_VALUE([out, retval]ULONG* retVal);
+    [id(162), propget] HRESULT INVALID_OPERATION([out, retval]ULONG* retVal);
+    [id(163), propget] HRESULT OUT_OF_MEMORY([out, retval]ULONG* retVal);
+    
+    /* FrontFaceDirection */
+    [id(164), propget] HRESULT CW([out, retval]ULONG* retVal);
+    [id(165), propget] HRESULT CCW([out, retval]ULONG* retVal);
+    
+    /* GetPName */
+    [id(166), propget] HRESULT LINE_WIDTH([out, retval]ULONG* retVal);
+    [id(167), propget] HRESULT ALIASED_POINT_SIZE_RANGE([out, retval]ULONG* retVal);
+    [id(168), propget] HRESULT ALIASED_LINE_WIDTH_RANGE([out, retval]ULONG* retVal);
+    [id(169), propget] HRESULT CULL_FACE_MODE([out, retval]ULONG* retVal);
+    [id(170), propget] HRESULT FRONT_FACE([out, retval]ULONG* retVal);
+    [id(171), propget] HRESULT DEPTH_RANGE([out, retval]ULONG* retVal);
+    [id(172), propget] HRESULT DEPTH_WRITEMASK([out, retval]ULONG* retVal);
+    [id(173), propget] HRESULT DEPTH_CLEAR_VALUE([out, retval]ULONG* retVal);
+    [id(174), propget] HRESULT DEPTH_FUNC([out, retval]ULONG* retVal);
+    [id(175), propget] HRESULT STENCIL_CLEAR_VALUE([out, retval]ULONG* retVal);
+    [id(176), propget] HRESULT STENCIL_FUNC([out, retval]ULONG* retVal);
+    [id(177), propget] HRESULT STENCIL_FAIL([out, retval]ULONG* retVal);
+    [id(178), propget] HRESULT STENCIL_PASS_DEPTH_FAIL([out, retval]ULONG* retVal);
+    [id(179), propget] HRESULT STENCIL_PASS_DEPTH_PASS([out, retval]ULONG* retVal);
+    [id(180), propget] HRESULT STENCIL_REF([out, retval]ULONG* retVal);
+    [id(181), propget] HRESULT STENCIL_VALUE_MASK([out, retval]ULONG* retVal);
+    [id(182), propget] HRESULT STENCIL_WRITEMASK([out, retval]ULONG* retVal);
+    [id(183), propget] HRESULT STENCIL_BACK_FUNC([out, retval]ULONG* retVal);
+    [id(184), propget] HRESULT STENCIL_BACK_FAIL([out, retval]ULONG* retVal);
+    [id(185), propget] HRESULT STENCIL_BACK_PASS_DEPTH_FAIL([out, retval]ULONG* retVal);
+    [id(186), propget] HRESULT STENCIL_BACK_PASS_DEPTH_PASS([out, retval]ULONG* retVal);
+    [id(187), propget] HRESULT STENCIL_BACK_REF([out, retval]ULONG* retVal);
+    [id(188), propget] HRESULT STENCIL_BACK_VALUE_MASK([out, retval]ULONG* retVal);
+    [id(189), propget] HRESULT STENCIL_BACK_WRITEMASK([out, retval]ULONG* retVal);
+    [id(190), propget] HRESULT VIEWPORT([out, retval]ULONG* retVal);
+    [id(191), propget] HRESULT SCISSOR_BOX([out, retval]ULONG* retVal);
+    /*      SCISSOR_TEST */
+    [id(192), propget] HRESULT COLOR_CLEAR_VALUE([out, retval]ULONG* retVal);
+    [id(193), propget] HRESULT COLOR_WRITEMASK([out, retval]ULONG* retVal);
+    [id(194), propget] HRESULT UNPACK_ALIGNMENT([out, retval]ULONG* retVal);
+    [id(195), propget] HRESULT PACK_ALIGNMENT([out, retval]ULONG* retVal);
+    [id(196), propget] HRESULT MAX_TEXTURE_SIZE([out, retval]ULONG* retVal);
+    [id(197), propget] HRESULT MAX_VIEWPORT_DIMS([out, retval]ULONG* retVal);
+    [id(198), propget] HRESULT SUBPIXEL_BITS([out, retval]ULONG* retVal);
+    [id(199), propget] HRESULT RED_BITS([out, retval]ULONG* retVal);
+    [id(200), propget] HRESULT GREEN_BITS([out, retval]ULONG* retVal);
+    [id(201), propget] HRESULT BLUE_BITS([out, retval]ULONG* retVal);
+    [id(202), propget] HRESULT ALPHA_BITS([out, retval]ULONG* retVal);
+    [id(203), propget] HRESULT DEPTH_BITS([out, retval]ULONG* retVal);
+    [id(204), propget] HRESULT STENCIL_BITS([out, retval]ULONG* retVal);
+    [id(205), propget] HRESULT POLYGON_OFFSET_UNITS([out, retval]ULONG* retVal);
+    /*      POLYGON_OFFSET_FILL */
+    [id(206), propget] HRESULT POLYGON_OFFSET_FACTOR([out, retval]ULONG* retVal);
+    [id(207), propget] HRESULT TEXTURE_BINDING_2D([out, retval]ULONG* retVal);
+    [id(208), propget] HRESULT SAMPLE_BUFFERS([out, retval]ULONG* retVal);
+    [id(209), propget] HRESULT SAMPLES([out, retval]ULONG* retVal);
+    [id(210), propget] HRESULT SAMPLE_COVERAGE_VALUE([out, retval]ULONG* retVal);
+    [id(211), propget] HRESULT SAMPLE_COVERAGE_INVERT([out, retval]ULONG* retVal);
+    
+    /* GetTextureParameter */
+    /*      TEXTURE_MAG_FILTER */
+    /*      TEXTURE_MIN_FILTER */
+    /*      TEXTURE_WRAP_S */
+    /*      TEXTURE_WRAP_T */
+    
+    [id(213), propget] HRESULT COMPRESSED_TEXTURE_FORMATS([out, retval]ULONG* retVal);
+    
+    /* HintMode */
+    [id(214), propget] HRESULT DONT_CARE([out, retval]ULONG* retVal);
+    [id(215), propget] HRESULT FASTEST([out, retval]ULONG* retVal);
+    [id(216), propget] HRESULT NICEST([out, retval]ULONG* retVal);
+    
+    /* HintTarget */
+    [id(217), propget] HRESULT GENERATE_MIPMAP_HINT([out, retval]ULONG* retVal);
+    
+    /* DataType */
+    [id(218), propget] HRESULT BYTE([out, retval]ULONG* retVal);
+    [id(219), propget] HRESULT UNSIGNED_BYTE([out, retval]ULONG* retVal);
+    [id(220), propget] HRESULT SHORT([out, retval]ULONG* retVal);
+    [id(221), propget] HRESULT UNSIGNED_SHORT([out, retval]ULONG* retVal);
+    [id(222), propget] HRESULT INT([out, retval]ULONG* retVal);
+    [id(223), propget] HRESULT UNSIGNED_INT([out, retval]ULONG* retVal);
+    [id(224), propget] HRESULT FLOAT([out, retval]ULONG* retVal);
+    
+    /* PixelFormat */
+    [id(225), propget] HRESULT DEPTH_COMPONENT([out, retval]ULONG* retVal);
+    [id(226), propget] HRESULT ALPHA([out, retval]ULONG* retVal);
+    [id(227), propget] HRESULT RGB([out, retval]ULONG* retVal);
+    [id(228), propget] HRESULT RGBA([out, retval]ULONG* retVal);
+    [id(229), propget] HRESULT LUMINANCE([out, retval]ULONG* retVal);
+    [id(230), propget] HRESULT LUMINANCE_ALPHA([out, retval]ULONG* retVal);
+    
+    /* PixelType */
+    /*      UNSIGNED_BYTE */
+    [id(231), propget] HRESULT UNSIGNED_SHORT_4_4_4_4([out, retval]ULONG* retVal);
+    [id(232), propget] HRESULT UNSIGNED_SHORT_5_5_5_1([out, retval]ULONG* retVal);
+    [id(233), propget] HRESULT UNSIGNED_SHORT_5_6_5([out, retval]ULONG* retVal);
+    
+    /* Shaders */
+    [id(234), propget] HRESULT FRAGMENT_SHADER([out, retval]ULONG* retVal);
+    [id(235), propget] HRESULT VERTEX_SHADER([out, retval]ULONG* retVal);
+    [id(236), propget] HRESULT MAX_VERTEX_ATTRIBS([out, retval]ULONG* retVal);
+    [id(237), propget] HRESULT MAX_VERTEX_UNIFORM_VECTORS([out, retval]ULONG* retVal);
+    [id(238), propget] HRESULT MAX_VARYING_VECTORS([out, retval]ULONG* retVal);
+    [id(239), propget] HRESULT MAX_COMBINED_TEXTURE_IMAGE_UNITS([out, retval]ULONG* retVal);
+    [id(240), propget] HRESULT MAX_VERTEX_TEXTURE_IMAGE_UNITS([out, retval]ULONG* retVal);
+    [id(241), propget] HRESULT MAX_TEXTURE_IMAGE_UNITS([out, retval]ULONG* retVal);
+    [id(242), propget] HRESULT MAX_FRAGMENT_UNIFORM_VECTORS([out, retval]ULONG* retVal);
+    [id(243), propget] HRESULT SHADER_TYPE([out, retval]ULONG* retVal);
+    [id(244), propget] HRESULT DELETE_STATUS([out, retval]ULONG* retVal);
+    [id(245), propget] HRESULT LINK_STATUS([out, retval]ULONG* retVal);
+    [id(246), propget] HRESULT VALIDATE_STATUS([out, retval]ULONG* retVal);
+    [id(247), propget] HRESULT ATTACHED_SHADERS([out, retval]ULONG* retVal);
+    [id(248), propget] HRESULT ACTIVE_UNIFORMS([out, retval]ULONG* retVal);
+    [id(249), propget] HRESULT ACTIVE_ATTRIBUTES([out, retval]ULONG* retVal);
+    [id(250), propget] HRESULT SHADING_LANGUAGE_VERSION([out, retval]ULONG* retVal);
+    [id(251), propget] HRESULT CURRENT_PROGRAM([out, retval]ULONG* retVal);
+    
+    /* StencilFunction */
+    [id(252), propget] HRESULT NEVER([out, retval]ULONG* retVal);
+    [id(253), propget] HRESULT LESS([out, retval]ULONG* retVal);
+    [id(254), propget] HRESULT EQUAL([out, retval]ULONG* retVal);
+    [id(255), propget] HRESULT LEQUAL([out, retval]ULONG* retVal);
+    [id(256), propget] HRESULT GREATER([out, retval]ULONG* retVal);
+    [id(257), propget] HRESULT NOTEQUAL([out, retval]ULONG* retVal);
+    [id(258), propget] HRESULT GEQUAL([out, retval]ULONG* retVal);
+    [id(259), propget] HRESULT ALWAYS([out, retval]ULONG* retVal);
+    
+    /* StencilOp */
+    /*      ZERO */
+    [id(260), propget] HRESULT KEEP([out, retval]ULONG* retVal);
+    [id(261), propget] HRESULT REPLACE([out, retval]ULONG* retVal);
+    [id(262), propget] HRESULT INCR([out, retval]ULONG* retVal);
+    [id(263), propget] HRESULT DECR([out, retval]ULONG* retVal);
+    [id(264), propget] HRESULT INVERT([out, retval]ULONG* retVal);
+    [id(265), propget] HRESULT INCR_WRAP([out, retval]ULONG* retVal);
+    [id(266), propget] HRESULT DECR_WRAP([out, retval]ULONG* retVal);
+    
+    /* StringName */
+    [id(267), propget] HRESULT VENDOR([out, retval]ULONG* retVal);
+    [id(268), propget] HRESULT RENDERER([out, retval]ULONG* retVal);
+    [id(269), propget] HRESULT VERSION([out, retval]ULONG* retVal);
+    
+    /* TextureMagFilter */
+    [id(270), propget] HRESULT NEAREST([out, retval]ULONG* retVal);
+    [id(271), propget] HRESULT LINEAR([out, retval]ULONG* retVal);
+    
+    /* TextureMinFilter */
+    /*      NEAREST */
+    /*      LINEAR */
+    [id(272), propget] HRESULT NEAREST_MIPMAP_NEAREST([out, retval]ULONG* retVal);
+    [id(273), propget] HRESULT LINEAR_MIPMAP_NEAREST([out, retval]ULONG* retVal);
+    [id(274), propget] HRESULT NEAREST_MIPMAP_LINEAR([out, retval]ULONG* retVal);
+    [id(275), propget] HRESULT LINEAR_MIPMAP_LINEAR([out, retval]ULONG* retVal);
+    
+    /* TextureParameterName */
+    [id(276), propget] HRESULT TEXTURE_MAG_FILTER([out, retval]ULONG* retVal);
+    [id(277), propget] HRESULT TEXTURE_MIN_FILTER([out, retval]ULONG* retVal);
+    [id(278), propget] HRESULT TEXTURE_WRAP_S([out, retval]ULONG* retVal);
+    [id(279), propget] HRESULT TEXTURE_WRAP_T([out, retval]ULONG* retVal);
+    
+    /* TextureTarget */
+    [id(280), propget] HRESULT TEXTURE_2D([out, retval]ULONG* retVal);
+    [id(281), propget] HRESULT TEXTURE([out, retval]ULONG* retVal);
+    
+    [id(282), propget] HRESULT TEXTURE_CUBE_MAP([out, retval]ULONG* retVal);
+    [id(283), propget] HRESULT TEXTURE_BINDING_CUBE_MAP([out, retval]ULONG* retVal);
+    [id(284), propget] HRESULT TEXTURE_CUBE_MAP_POSITIVE_X([out, retval]ULONG* retVal);
+    [id(285), propget] HRESULT TEXTURE_CUBE_MAP_NEGATIVE_X([out, retval]ULONG* retVal);
+    [id(286), propget] HRESULT TEXTURE_CUBE_MAP_POSITIVE_Y([out, retval]ULONG* retVal);
+    [id(287), propget] HRESULT TEXTURE_CUBE_MAP_NEGATIVE_Y([out, retval]ULONG* retVal);
+    [id(288), propget] HRESULT TEXTURE_CUBE_MAP_POSITIVE_Z([out, retval]ULONG* retVal);
+    [id(289), propget] HRESULT TEXTURE_CUBE_MAP_NEGATIVE_Z([out, retval]ULONG* retVal);
+    [id(290), propget] HRESULT MAX_CUBE_MAP_TEXTURE_SIZE([out, retval]ULONG* retVal);
+    
+    /* TextureUnit */
+    [id(291), propget] HRESULT TEXTURE0([out, retval]ULONG* retVal);
+    [id(292), propget] HRESULT TEXTURE1([out, retval]ULONG* retVal);
+    [id(293), propget] HRESULT TEXTURE2([out, retval]ULONG* retVal);
+    [id(294), propget] HRESULT TEXTURE3([out, retval]ULONG* retVal);
+    [id(295), propget] HRESULT TEXTURE4([out, retval]ULONG* retVal);
+    [id(296), propget] HRESULT TEXTURE5([out, retval]ULONG* retVal);
+    [id(297), propget] HRESULT TEXTURE6([out, retval]ULONG* retVal);
+    [id(298), propget] HRESULT TEXTURE7([out, retval]ULONG* retVal);
+    [id(299), propget] HRESULT TEXTURE8([out, retval]ULONG* retVal);
+    [id(300), propget] HRESULT TEXTURE9([out, retval]ULONG* retVal);
+    [id(301), propget] HRESULT TEXTURE10([out, retval]ULONG* retVal);
+    [id(302), propget] HRESULT TEXTURE11([out, retval]ULONG* retVal);
+    [id(303), propget] HRESULT TEXTURE12([out, retval]ULONG* retVal);
+    [id(304), propget] HRESULT TEXTURE13([out, retval]ULONG* retVal);
+    [id(305), propget] HRESULT TEXTURE14([out, retval]ULONG* retVal);
+    [id(306), propget] HRESULT TEXTURE15([out, retval]ULONG* retVal);
+    [id(307), propget] HRESULT TEXTURE16([out, retval]ULONG* retVal);
+    [id(308), propget] HRESULT TEXTURE17([out, retval]ULONG* retVal);
+    [id(309), propget] HRESULT TEXTURE18([out, retval]ULONG* retVal);
+    [id(310), propget] HRESULT TEXTURE19([out, retval]ULONG* retVal);
+    [id(311), propget] HRESULT TEXTURE20([out, retval]ULONG* retVal);
+    [id(312), propget] HRESULT TEXTURE21([out, retval]ULONG* retVal);
+    [id(313), propget] HRESULT TEXTURE22([out, retval]ULONG* retVal);
+    [id(314), propget] HRESULT TEXTURE23([out, retval]ULONG* retVal);
+    [id(315), propget] HRESULT TEXTURE24([out, retval]ULONG* retVal);
+    [id(316), propget] HRESULT TEXTURE25([out, retval]ULONG* retVal);
+    [id(317), propget] HRESULT TEXTURE26([out, retval]ULONG* retVal);
+    [id(318), propget] HRESULT TEXTURE27([out, retval]ULONG* retVal);
+    [id(319), propget] HRESULT TEXTURE28([out, retval]ULONG* retVal);
+    [id(320), propget] HRESULT TEXTURE29([out, retval]ULONG* retVal);
+    [id(321), propget] HRESULT TEXTURE30([out, retval]ULONG* retVal);
+    [id(322), propget] HRESULT TEXTURE31([out, retval]ULONG* retVal);
+    [id(323), propget] HRESULT ACTIVE_TEXTURE([out, retval]ULONG* retVal);
+    
+    /* TextureWrapMode */
+    [id(324), propget] HRESULT REPEAT([out, retval]ULONG* retVal);
+    [id(325), propget] HRESULT CLAMP_TO_EDGE([out, retval]ULONG* retVal);
+    [id(326), propget] HRESULT MIRRORED_REPEAT([out, retval]ULONG* retVal);
+    
+    /* Uniform Types */
+    [id(327), propget] HRESULT FLOAT_VEC2([out, retval]ULONG* retVal);
+    [id(328), propget] HRESULT FLOAT_VEC3([out, retval]ULONG* retVal);
+    [id(329), propget] HRESULT FLOAT_VEC4([out, retval]ULONG* retVal);
+    [id(330), propget] HRESULT INT_VEC2([out, retval]ULONG* retVal);
+    [id(331), propget] HRESULT INT_VEC3([out, retval]ULONG* retVal);
+    [id(332), propget] HRESULT INT_VEC4([out, retval]ULONG* retVal);
+    [id(333), propget] HRESULT BOOL([out, retval]ULONG* retVal);
+    [id(334), propget] HRESULT BOOL_VEC2([out, retval]ULONG* retVal);
+    [id(335), propget] HRESULT BOOL_VEC3([out, retval]ULONG* retVal);
+    [id(336), propget] HRESULT BOOL_VEC4([out, retval]ULONG* retVal);
+    [id(337), propget] HRESULT FLOAT_MAT2([out, retval]ULONG* retVal);
+    [id(338), propget] HRESULT FLOAT_MAT3([out, retval]ULONG* retVal);
+    [id(339), propget] HRESULT FLOAT_MAT4([out, retval]ULONG* retVal);
+    [id(340), propget] HRESULT SAMPLER_2D([out, retval]ULONG* retVal);
+    [id(341), propget] HRESULT SAMPLER_CUBE([out, retval]ULONG* retVal);
+    
+    /* Vertex Arrays */
+    [id(342), propget] HRESULT VERTEX_ATTRIB_ARRAY_ENABLED([out, retval]ULONG* retVal);
+    [id(343), propget] HRESULT VERTEX_ATTRIB_ARRAY_SIZE([out, retval]ULONG* retVal);
+    [id(344), propget] HRESULT VERTEX_ATTRIB_ARRAY_STRIDE([out, retval]ULONG* retVal);
+    [id(345), propget] HRESULT VERTEX_ATTRIB_ARRAY_TYPE([out, retval]ULONG* retVal);
+    [id(346), propget] HRESULT VERTEX_ATTRIB_ARRAY_NORMALIZED([out, retval]ULONG* retVal);
+    [id(347), propget] HRESULT VERTEX_ATTRIB_ARRAY_POINTER([out, retval]ULONG* retVal);
+    [id(348), propget] HRESULT VERTEX_ATTRIB_ARRAY_BUFFER_BINDING([out, retval]ULONG* retVal);
+    
+    /* Shader Source */
+    [id(349), propget] HRESULT COMPILE_STATUS([out, retval]ULONG* retVal);
+    
+    /* Shader Precision-Specified Types */
+    [id(350), propget] HRESULT LOW_FLOAT([out, retval]ULONG* retVal);
+    [id(351), propget] HRESULT MEDIUM_FLOAT([out, retval]ULONG* retVal);
+    [id(352), propget] HRESULT HIGH_FLOAT([out, retval]ULONG* retVal);
+    [id(353), propget] HRESULT LOW_INT([out, retval]ULONG* retVal);
+    [id(354), propget] HRESULT MEDIUM_INT([out, retval]ULONG* retVal);
+    [id(355), propget] HRESULT HIGH_INT([out, retval]ULONG* retVal);
+    
+    /* Framebuffer Object. */
+    [id(356), propget] HRESULT FRAMEBUFFER([out, retval]ULONG* retVal);
+    [id(357), propget] HRESULT RENDERBUFFER([out, retval]ULONG* retVal);
+    
+    [id(358), propget] HRESULT RGBA4([out, retval]ULONG* retVal);
+    [id(359), propget] HRESULT RGB5_A1([out, retval]ULONG* retVal);
+    [id(360), propget] HRESULT RGB565([out, retval]ULONG* retVal);
+    [id(361), propget] HRESULT DEPTH_COMPONENT16([out, retval]ULONG* retVal);
+    [id(362), propget] HRESULT STENCIL_INDEX([out, retval]ULONG* retVal);
+    [id(363), propget] HRESULT STENCIL_INDEX8([out, retval]ULONG* retVal);
+    [id(364), propget] HRESULT DEPTH_STENCIL([out, retval]ULONG* retVal);
+    
+    [id(365), propget] HRESULT RENDERBUFFER_WIDTH([out, retval]ULONG* retVal);
+    [id(366), propget] HRESULT RENDERBUFFER_HEIGHT([out, retval]ULONG* retVal);
+    [id(367), propget] HRESULT RENDERBUFFER_INTERNAL_FORMAT([out, retval]ULONG* retVal);
+    [id(368), propget] HRESULT RENDERBUFFER_RED_SIZE([out, retval]ULONG* retVal);
+    [id(369), propget] HRESULT RENDERBUFFER_GREEN_SIZE([out, retval]ULONG* retVal);
+    [id(370), propget] HRESULT RENDERBUFFER_BLUE_SIZE([out, retval]ULONG* retVal);
+    [id(371), propget] HRESULT RENDERBUFFER_ALPHA_SIZE([out, retval]ULONG* retVal);
+    [id(372), propget] HRESULT RENDERBUFFER_DEPTH_SIZE([out, retval]ULONG* retVal);
+    [id(373), propget] HRESULT RENDERBUFFER_STENCIL_SIZE([out, retval]ULONG* retVal);
+    
+    [id(374), propget] HRESULT FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE([out, retval]ULONG* retVal);
+    [id(375), propget] HRESULT FRAMEBUFFER_ATTACHMENT_OBJECT_NAME([out, retval]ULONG* retVal);
+    [id(376), propget] HRESULT FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL([out, retval]ULONG* retVal);
+    [id(377), propget] HRESULT FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE([out, retval]ULONG* retVal);
+    
+    [id(378), propget] HRESULT COLOR_ATTACHMENT0([out, retval]ULONG* retVal);
+    [id(379), propget] HRESULT DEPTH_ATTACHMENT([out, retval]ULONG* retVal);
+    [id(380), propget] HRESULT STENCIL_ATTACHMENT([out, retval]ULONG* retVal);
+    [id(381), propget] HRESULT DEPTH_STENCIL_ATTACHMENT([out, retval]ULONG* retVal);
+    
+    [id(382), propget] HRESULT NONE([out, retval]ULONG* retVal);
+    
+    [id(383), propget] HRESULT FRAMEBUFFER_COMPLETE([out, retval]ULONG* retVal);
+    [id(384), propget] HRESULT FRAMEBUFFER_INCOMPLETE_ATTACHMENT([out, retval]ULONG* retVal);
+    [id(385), propget] HRESULT FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT([out, retval]ULONG* retVal);
+    [id(386), propget] HRESULT FRAMEBUFFER_INCOMPLETE_DIMENSIONS([out, retval]ULONG* retVal);
+    [id(387), propget] HRESULT FRAMEBUFFER_UNSUPPORTED([out, retval]ULONG* retVal);
+    
+    [id(388), propget] HRESULT FRAMEBUFFER_BINDING([out, retval]ULONG* retVal);
+    [id(389), propget] HRESULT RENDERBUFFER_BINDING([out, retval]ULONG* retVal);
+    [id(390), propget] HRESULT MAX_RENDERBUFFER_SIZE([out, retval]ULONG* retVal);
+    
+    [id(391), propget] HRESULT INVALID_FRAMEBUFFER_OPERATION([out, retval]ULONG* retVal);
+    
+    /* WebGL-specific enums */
+    [id(392), propget] HRESULT UNPACK_FLIP_Y_WEBGL([out, retval]ULONG* retVal);
+    [id(393), propget] HRESULT UNPACK_PREMULTIPLY_ALPHA_WEBGL([out, retval]ULONG* retVal);
+    [id(394), propget] HRESULT CONTEXT_LOST_WEBGL([out, retval]ULONG* retVal);
+    [id(395), propget] HRESULT UNPACK_COLORSPACE_CONVERSION_WEBGL([out, retval]ULONG* retVal);
+    [id(396), propget] HRESULT BROWSER_DEFAULT_WEBGL([out, retval]ULONG* retVal);
+}
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(4444FB36-946C-4ED8-B2EB-B3908D1E33AF),
+	dual,
+	pointer_default(unique)
+]
+interface IWebGLRenderingContext : IWebGLRCConstants
+{
+	[id(10010), propget] HRESULT canvas([out, retval]IDispatch** retVal);
+    [id(10020), propget] HRESULT drawingBufferWidth([out, retval]ULONG* retVal);
+    [id(10030), propget] HRESULT drawingBufferHeight([out, retval]ULONG* retVal);
+
+    [id(10040)] HRESULT getContextAttributes([out, retval]IWebGLContextAttributes** retVal);
+    [id(10050)] HRESULT isContextLost([out, retval]VARIANT* retVal);
+    
+    [id(10060)] HRESULT getSupportedExtensions([out, retval]IDispatch** retVal);
+    [id(10070)] HRESULT getExtension([in]BSTR name, [out, retval]IDispatch** retVal);
+
+    [id(10080)] HRESULT activeTexture([in]ULONG texture);
+    [id(10090)] HRESULT attachShader([in]IWebGLProgram* program, [in]IWebGLShader* shader);
+    [id(10100)] HRESULT bindAttribLocation([in]IWebGLProgram* program, [in]ULONG index, [in]BSTR name);
+    [id(10110)] HRESULT bindBuffer([in]ULONG target, [in]IWebGLBuffer* buffer);
+    [id(10120)] HRESULT bindFramebuffer([in]ULONG target, [in]IWebGLFramebuffer* framebuffer);
+    [id(10130)] HRESULT bindRenderbuffer([in]ULONG target, [in]IWebGLRenderbuffer* renderbuffer);
+    [id(10140)] HRESULT bindTexture([in]ULONG target, [in]IWebGLTexture* texture);
+    [id(10150)] HRESULT blendColor([in]FLOAT red, [in]FLOAT green, [in]FLOAT blue, [in]FLOAT alpha);
+    [id(10160)] HRESULT blendEquation([in]ULONG mode);
+    [id(10170)] HRESULT blendEquationSeparate([in]ULONG modeRGB, [in]ULONG modeAlpha);
+    [id(10180)] HRESULT blendFunc([in]ULONG sfactor, [in]ULONG dfactor);
+    [id(10190)] HRESULT blendFuncSeparate([in]ULONG srcRGB, [in]ULONG dstRGB, 
+                           [in]ULONG srcAlpha, [in]ULONG dstAlpha);
+
+    [id(10200)] HRESULT bufferData([in]ULONG target, [in]VARIANT arg1, [in]VARIANT arg2);
+    [id(10210)] HRESULT bufferSubData([in]ULONG target, [in]LONG offset, [in]IDispatch* data);
+
+    [id(10220)] HRESULT checkFramebufferStatus([in]ULONG target, [out, retval]ULONG* retVal);
+    [id(10230)] HRESULT clear([in]ULONG mask);
+    [id(10240)] HRESULT clearColor([in]FLOAT red, [in]FLOAT green, [in]FLOAT blue, [in]FLOAT alpha);
+    [id(10250)] HRESULT clearDepth([in]FLOAT depth);
+    [id(10260)] HRESULT clearStencil([in]LONG s);
+    [id(10270)] HRESULT colorMask([in]BOOL red, [in]BOOL green, [in]BOOL blue, [in]BOOL alpha);
+    [id(10280)] HRESULT compileShader([in]IWebGLShader* shader);
+
+	[id(10281)] HRESULT compressedTexImage2D([in]ULONG target, [in]LONG level, [in]ULONG internalformat,
+                              [in]LONG width, [in]LONG height, [in]LONG border,
+                              [in]IArrayBufferView* data);
+    [id(10282)] HRESULT compressedTexSubImage2D([in]ULONG target, [in]LONG level,
+                                 [in]LONG xoffset, [in]LONG yoffset,
+                                 [in]LONG width, [in]LONG height, [in]ULONG format,
+                                 [in]IArrayBufferView* data);
+
+    [id(10290)] HRESULT copyTexImage2D([in]ULONG target, [in]LONG level, [in]ULONG internalformat, 
+                        [in]LONG x, [in]LONG y, [in]LONG width, [in]LONG height, 
+                        [in]LONG border);
+    [id(10300)] HRESULT copyTexSubImage2D([in]ULONG target, [in]LONG level, [in]LONG xoffset, [in]LONG yoffset, 
+                           [in]LONG x, [in]LONG y, [in]LONG width, [in]LONG height);
+
+    [id(10310)] HRESULT createBuffer([out, retval]IWebGLBuffer** retVal);
+    [id(10320)] HRESULT createFramebuffer([out, retval]IWebGLFramebuffer** retVal);
+    [id(10330)] HRESULT createProgram([out, retval]IWebGLProgram** retVal);
+    [id(10340)] HRESULT createRenderbuffer([out, retval]IWebGLRenderbuffer** retVal);
+    [id(10350)] HRESULT createShader([in]ULONG type, [out, retval]IWebGLShader** retVal);
+    [id(10360)] HRESULT createTexture([out, retval]IWebGLTexture** retVal);
+
+    [id(10370)] HRESULT cullFace([in]ULONG mode);
+
+    [id(10380)] HRESULT deleteBuffer([in]IWebGLBuffer* buffer);
+    [id(10390)] HRESULT deleteFramebuffer([in]IWebGLFramebuffer* framebuffer);
+    [id(10400)] HRESULT deleteProgram([in]IWebGLProgram* program);
+    [id(10410)] HRESULT deleteRenderbuffer([in]IWebGLRenderbuffer* renderbuffer);
+    [id(10420)] HRESULT deleteShader([in]IWebGLShader* shader);
+    [id(10430)] HRESULT deleteTexture([in]IWebGLTexture* texture);
+
+    [id(10440)] HRESULT depthFunc([in]ULONG func);
+    [id(10450)] HRESULT depthMask([in]BOOL flag);
+    [id(10460)] HRESULT depthRange([in]FLOAT zNear, [in]FLOAT zFar);
+    [id(10470)] HRESULT detachShader([in]IWebGLProgram* program, [in]IWebGLShader* shader);
+    [id(10480)] HRESULT disable([in]ULONG cap);
+    [id(10490)] HRESULT disableVertexAttribArray([in]ULONG index);
+    [id(10500)] HRESULT drawArrays([in]ULONG mode, [in]LONG first, [in]LONG count);
+    [id(10510)] HRESULT drawElements([in]ULONG mode, [in]LONG count, [in]ULONG type, [in]LONG offset);
+
+    [id(10520)] HRESULT enable([in]ULONG cap);
+    [id(10530)] HRESULT enableVertexAttribArray([in]ULONG index);
+    [id(10540)] HRESULT finish();
+    [id(10550)] HRESULT flush();
+    [id(10560)] HRESULT framebufferRenderbuffer([in]ULONG target, [in]ULONG attachment, 
+                                 [in]ULONG renderbuffertarget, 
+                                 [in]IWebGLRenderbuffer* renderbuffer);
+    [id(10570)] HRESULT framebufferTexture2D([in]ULONG target, [in]ULONG attachment, [in]ULONG textarget, 
+                              [in]IWebGLTexture* texture, [in]LONG level);
+    [id(10580)] HRESULT frontFace([in]ULONG mode);
+
+    [id(10590)] HRESULT generateMipmap([in]ULONG target);
+
+    [id(10600)] HRESULT getActiveAttrib([in]IWebGLProgram* program, [in]ULONG index, [out, retval]IWebGLActiveInfo** retVal);
+    [id(10610)] HRESULT getActiveUniform([in]IWebGLProgram* program, [in]ULONG index, [out, retval]IWebGLActiveInfo** retVal);
+    [id(10620)] HRESULT getAttachedShaders([in]IWebGLProgram* program, [out, retval]IDispatch** retVal);
+
+    [id(10630)] HRESULT getAttribLocation([in]IWebGLProgram* program, [in]BSTR name, [out, retval]LONG* retVal);
+
+    [id(10640)] HRESULT getParameter([in]ULONG pname, [out, retval]VARIANT* retVal);
+    [id(10650)] HRESULT getBufferParameter([in]ULONG target, [in]ULONG pname, [out, retval]VARIANT* retVal);
+
+    [id(10660)] HRESULT getError([out, retval]ULONG* retVal);
+
+    [id(10670)] HRESULT getFramebufferAttachmentParameter([in]ULONG target, [in]ULONG attachment, 
+                                          [in]ULONG pname, [out, retval]VARIANT* retVal);
+    [id(10680)] HRESULT getProgramParameter([in]IWebGLProgram* program, [in]ULONG pname, [out, retval]VARIANT* retVal);
+    [id(10690)] HRESULT getProgramInfoLog([in]IWebGLProgram* program, [out, retval]BSTR* retVal);
+    [id(10700)] HRESULT getRenderbufferParameter([in]ULONG target, [in]ULONG pname, [out, retval]VARIANT* retVal);
+    [id(10710)] HRESULT getShaderParameter([in]IWebGLShader* shader, [in]ULONG pname, [out, retval]VARIANT* retVal);
+	[id(10711)] HRESULT getShaderPrecisionFormat([in]ULONG shadertype, [in]ULONG precisiontype, [out, retval]IWebGLShaderPrecisionFormat** retVal);
+    [id(10720)] HRESULT getShaderInfoLog([in]IWebGLShader* shader, [out, retval]BSTR* retVal);
+
+    [id(10730)] HRESULT getShaderSource([in]IWebGLShader* shader, [out, retval]BSTR* retVal);
+
+    [id(10740)] HRESULT getTexParameter([in]ULONG target, [in]ULONG pname, [out, retval]VARIANT* retVal);
+
+    [id(10750)] HRESULT getUniform([in]IWebGLProgram* program, [in]IWebGLUniformLocation* location, [out, retval]VARIANT* retVal);
+
+    [id(10760)] HRESULT getUniformLocation([in]IWebGLProgram* program, [in]BSTR name, [out, retval]IWebGLUniformLocation** retVal);
+
+    [id(10770)] HRESULT getVertexAttrib([in]ULONG index, [in]ULONG pname, [out, retval]VARIANT* retVal);
+
+    [id(10780)] HRESULT getVertexAttribOffset([in]ULONG index, [in]ULONG pname, [out, retval]LONG* retVal);
+
+    [id(10790)] HRESULT hint([in]ULONG target, [in]ULONG mode);
+    [id(10800)] HRESULT isBuffer([in]IWebGLBuffer* buffer, [out, retval]VARIANT* retVal);
+    [id(10810)] HRESULT isEnabled([in]ULONG cap, [out, retval]VARIANT* retVal);
+    [id(10820)] HRESULT isFramebuffer([in]IWebGLFramebuffer* framebuffer, [out, retval]VARIANT* retVal);
+    [id(10830)] HRESULT isProgram([in]IWebGLProgram* program, [out, retval]VARIANT* retVal);
+    [id(10840)] HRESULT isRenderbuffer([in]IWebGLRenderbuffer* renderbuffer, [out, retval]VARIANT* retVal);
+    [id(10850)] HRESULT isShader([in]IWebGLShader* shader, [out, retval]VARIANT* retVal);
+    [id(10860)] HRESULT isTexture([in]IWebGLTexture* texture, [out, retval]VARIANT* retVal);
+    [id(10870)] HRESULT lineWidth([in]FLOAT width);
+    [id(10880)] HRESULT linkProgram([in]IWebGLProgram* program);
+    [id(10890)] HRESULT pixelStorei([in]ULONG pname, [in]LONG param);
+    [id(10900)] HRESULT polygonOffset([in]FLOAT factor, [in]FLOAT units);
+
+    [id(10910)] HRESULT readPixels([in]LONG x, [in]LONG y, [in]LONG width, [in]LONG height, 
+                    [in]ULONG format, [in]ULONG type, [in]IArrayBufferView* pixels);
+
+    [id(10920)] HRESULT renderbufferStorage([in]ULONG target, [in]ULONG internalformat, 
+                             [in]LONG width, [in]LONG height);
+    [id(10930)] HRESULT sampleCoverage(FLOAT value, [in]BOOL invert);
+    [id(10940)] HRESULT scissor([in]LONG x, [in]LONG y, [in]LONG width, [in]LONG height);
+
+    [id(10950)] HRESULT shaderSource([in]IWebGLShader* shader, [in]BSTR source);
+
+    [id(10960)] HRESULT stencilFunc([in]ULONG func, [in]LONG ref, [in]ULONG mask);
+    [id(10970)] HRESULT stencilFuncSeparate([in]ULONG face, [in]ULONG func, [in]LONG ref, [in]ULONG mask);
+    [id(10980)] HRESULT stencilMask([in]ULONG mask);
+    [id(10990)] HRESULT stencilMaskSeparate([in]ULONG face, [in]ULONG mask);
+    [id(11000)] HRESULT stencilOp([in]ULONG fail, [in]ULONG zfail, [in]ULONG zpass);
+    [id(11010)] HRESULT stencilOpSeparate([in]ULONG face, [in]ULONG fail, [in]ULONG zfail, [in]ULONG zpass);
+
+	[id(11020)] HRESULT texImage2D([in]ULONG target, [in]LONG level, [in]ULONG internalformat,
+		[in]VARIANT arg0, [in]VARIANT arg1, [in]VARIANT arg2,
+		[in, optional]VARIANT arg3, [in, optional]VARIANT arg4, [in, optional]VARIANT arg5);
+    
+    [id(11030)] HRESULT texParameterf([in]ULONG target, [in]ULONG pname, [in]FLOAT param);
+    [id(11040)] HRESULT texParameteri([in]ULONG target, [in]ULONG pname, [in]LONG param);
+
+    [id(11050)] HRESULT texSubImage2D([in]ULONG target, [in]LONG level, [in]LONG xoffset, [in]LONG yoffset,
+		[in]VARIANT arg0, [in]VARIANT arg1, [in]VARIANT arg2,
+		[in, optional]VARIANT arg3, [in, optional]VARIANT arg4);
+    
+    [id(11060)] HRESULT uniform1f([in]IWebGLUniformLocation* location, [in]FLOAT x);
+    [id(11070)] HRESULT uniform1fv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+
+    [id(11080)] HRESULT uniform1i([in]IWebGLUniformLocation* location, [in]LONG x);
+    [id(11090)] HRESULT uniform1iv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+
+    [id(11100)] HRESULT uniform2f([in]IWebGLUniformLocation* location, [in]FLOAT x, [in]FLOAT y);
+    [id(11110)] HRESULT uniform2fv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+
+    [id(11120)] HRESULT uniform2i([in]IWebGLUniformLocation* location, [in]LONG x, [in]LONG y);
+    [id(11130)] HRESULT uniform2iv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+
+    [id(11140)] HRESULT uniform3f([in]IWebGLUniformLocation* location, [in]FLOAT x, [in]FLOAT y, [in]FLOAT z);
+    [id(11150)] HRESULT uniform3fv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+
+    [id(11160)] HRESULT uniform3i([in]IWebGLUniformLocation* location, [in]LONG x, [in]LONG y, [in]LONG z);
+    [id(11170)] HRESULT uniform3iv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+
+    [id(11180)] HRESULT uniform4f([in]IWebGLUniformLocation* location, [in]FLOAT x, [in]FLOAT y, [in]FLOAT z, [in]FLOAT w);
+    [id(11190)] HRESULT uniform4fv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+
+    [id(11200)] HRESULT uniform4i([in]IWebGLUniformLocation* location, [in]LONG x, [in]LONG y, [in]LONG z, [in]LONG w);
+    [id(11210)] HRESULT uniform4iv([in]IWebGLUniformLocation* location, [in]IDispatch* v);
+	
+    [id(11220)] HRESULT uniformMatrix2fv([in]IWebGLUniformLocation* location, [in]BOOL transpose, [in]IDispatch* value);
+    [id(11230)] HRESULT uniformMatrix3fv([in]IWebGLUniformLocation* location, [in]BOOL transpose, [in]IDispatch* value);
+    [id(11240)] HRESULT uniformMatrix4fv([in]IWebGLUniformLocation* location, [in]BOOL transpose, [in]IDispatch* value);
+
+    [id(11250)] HRESULT useProgram([in]IWebGLProgram* program);
+    [id(11260)] HRESULT validateProgram([in]IWebGLProgram* program);
+
+    [id(11270)] HRESULT vertexAttrib1f([in]ULONG indx, [in]FLOAT x);
+    [id(11280)] HRESULT vertexAttrib1fv([in]ULONG indx,[in]IDispatch* v);
+    [id(11290)] HRESULT vertexAttrib2f([in]ULONG indx, [in]FLOAT x, [in]FLOAT y);
+    [id(11300)] HRESULT vertexAttrib2fv([in]ULONG indx,[in]IDispatch* v);
+    [id(11310)] HRESULT vertexAttrib3f([in]ULONG indx, [in]FLOAT x, [in]FLOAT y, [in]FLOAT z);
+    [id(11320)] HRESULT vertexAttrib3fv([in]ULONG indx,[in]IDispatch* v);
+    [id(11330)] HRESULT vertexAttrib4f([in]ULONG indx, [in]FLOAT x, [in]FLOAT y, [in]FLOAT z, [in]FLOAT w);
+    [id(11340)] HRESULT vertexAttrib4fv([in]ULONG indx,[in]IDispatch* v);
+    [id(11350)] HRESULT vertexAttribPointer([in]ULONG indx, [in]LONG size, [in]ULONG type, [in]BOOL normalized, [in]LONG stride, [in]LONG offset);
+
+    [id(11360)] HRESULT __viewport([in]LONG x, [in]LONG y, [in]LONG width, [in]LONG height); // __ prefix is used to
+	// separate name from VIEWPORT property name for IDL compiler (that otherwise merge them to single uppercased name)
+	// the name will be undecorated in IndexableIDispatchEx.
+};
+

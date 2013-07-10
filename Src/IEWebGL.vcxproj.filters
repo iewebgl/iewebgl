@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{96200baa-2ad8-49bf-bcf8-e41af42b6658}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="WebGL">
+      <UniqueIdentifier>{83fbfe21-0dc6-4adb-83e0-e461e94dd844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TypedArray">
+      <UniqueIdentifier>{cbea037c-6c89-44ff-b1e6-17cba198f80a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="UnitTest">
+      <UniqueIdentifier>{8e52f952-44d0-4c4e-b777-8ac793b3827b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest\TypedArray">
+      <UniqueIdentifier>{c7e850be-08f4-4d15-b041-402092b6c66f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest\WebGL">
+      <UniqueIdentifier>{b2e57b5c-d6e8-4455-bcf3-f315c3829d4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest\qunit">
+      <UniqueIdentifier>{a31ae67e-75b9-4236-af81-2658e340e57c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="IEWebGL.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="xdlldata.c">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="IEWebGL_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLActiveInfo.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLBuffer.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLFramebuffer.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLUniformLocation.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Float32Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Float64Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Int8Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Int16Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Int32Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Uint8Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Uint16Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\Uint32Array.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\ArrayBuffer.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\DataArrayView.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGLPlugin.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="TypedArray\TypedArrayMaker.cpp">
+      <Filter>TypedArray</Filter>
+    </ClCompile>
+    <ClCompile Include="IEWebGLBHO.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="InvokeHelper.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptArray.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLUtils.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLUtils.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLContextAttributes.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="ECMAConvertion.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginUtils.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLFramebufferAttachment.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLObjectPointer.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLProgram.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLRenderbuffer.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLRenderingContext.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLShader.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLTexture.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLTexelConversions.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="JSObjectImpl.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawUtils.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLPrimaryFBO.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLExtensions.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WebGL\WebGLShaderPrecisionFormat.cpp">
+      <Filter>WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="TlsData.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IEWebGL_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLActiveInfo.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLBuffer.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLFramebuffer.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLUniformLocation.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Float32Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Float64Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Int8Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Int16Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Int32Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Uint8Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Uint16Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\Uint32Array.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\ArrayBuffer.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\DataArrayView.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\TypedArrayView.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="TypedArray\TypedArrayMaker.h">
+      <Filter>TypedArray</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLUtils.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLContextAttributes.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="xdlldata.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="ECMAConvertion.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="IEWebGLBHO.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="InvokeHelper.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptArray.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGLPlugin.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="IPluginObj.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginUtils.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLTexture.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLFramebufferAttachment.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLGetConcrete.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLObjectPointer.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLProgram.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLRCConstants.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLRenderbuffer.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLRenderingContext.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLShader.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLTexelConversions.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="JSObjectImpl.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawUtils.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLPrimaryFBO.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLExtensions.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="WebGL\WebGLShaderPrecisionFormat.h">
+      <Filter>WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="TlsData.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IEWebGL.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="IEWebGL.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="WebGLContext.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="IEWebGL.def">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="WebGLPlugin.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="WebGLPlugin.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="IEWebGLBHO.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="webglhelper.js" />
+    <None Include="..\UnitTest\qunit\qunit.css">
+      <Filter>UnitTest\qunit</Filter>
+    </None>
+    <None Include="..\UnitTest\qunit\qunit.js">
+      <Filter>UnitTest\qunit</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\ArrayBuffer.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Common.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\DataView.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Float32Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Float64Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Int8Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Int16Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Int32Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Mixed.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\PerfTest.html">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\TypedArray.html">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Uint8Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Uint16Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\TypedArray\Uint32Array.js">
+      <Filter>UnitTest\TypedArray</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\Common.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\PerfTest.html">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGL.html">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLBuffer.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLFramebuffer.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLProgram.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLRenderbuffer.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLRenderingContext.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLShader.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLTexture.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\Common.js">
+      <Filter>UnitTest</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGLExtensions.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\UnitTest\WebGL\WebGL_API.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+    <None Include="..\WebGLMain.html" />
+    <None Include="..\WebGLPlugin.html" />
+    <None Include="..\UnitTest\WebGL\WebGLFunctional.js">
+      <Filter>UnitTest\WebGL</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="IEWebGL.idl">
+      <Filter>Resource Files</Filter>
+    </Midl>
+    <Midl Include="WebGL\WebGL.idl">
+      <Filter>WebGL</Filter>
+    </Midl>
+    <Midl Include="TypedArray\TypedArray.idl">
+      <Filter>TypedArray</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

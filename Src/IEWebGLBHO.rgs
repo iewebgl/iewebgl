@@ -1,0 +1,42 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {424F5422-EFE8-4BBE-BCBC-8EC095EC9A8F} = s 'IE WebGL Plugin'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			Version = s '1.0'
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove Windows
+			{
+				NoRemove CurrentVersion
+				{
+					NoRemove Explorer
+					{
+						NoRemove 'Browser Helper Objects'
+						{
+							'{424F5422-EFE8-4BBE-BCBC-8EC095EC9A8F}'
+							{
+								val NoExplorer = d '1'
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+

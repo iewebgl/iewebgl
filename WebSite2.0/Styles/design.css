@@ -1,0 +1,229 @@
+
+* { margin: 0; padding: 0; }
+
+html, body { width: 100%; height: 100%; }
+
+h1 { font-family:Verdana,Arial,sans-serif; font-size:18px; font-weight:normal; color:#888888; padding:3px 0px 10px 0px; }
+h2 { font-family:Verdana,Arial,sans-serif; line-height:12px; font-size:12px; font-weight:bold; color:#777777; padding-bottom:7px; }
+p { font-family:Verdana,Arial,sans-serif; line-height:17px; font-size:12px; color:#777777; }
+a { color:#497daf; }
+
+img.screenshot { font-family:Verdana,Arial,sans-serif; font-size:10px; color:#444444; border:10px; vertical-align:middle; margin: 5px 0px 5px 0px }
+
+/* --- Structure ---------------------------------------------------------------------------------------------- */
+
+.title { width: 100%; height: 100px; background-color: #91a5b8; }
+
+.navigation { width: 100%; height: 35px; background-color: #CACCEA; margin: 0 auto; text-align: center; background-image:url('../Imgs/navig_button.png'); }
+.navigation a { text-decoration:none; }
+.navigation p { font-family: Arial, sans-serif; line-height: 34px; font-size: 10px; color: inherit; }
+.navigation-container-hidder { width: 596px; height: 100%; float: left; overflow:hidden; }
+.navigation-container { width: 650px; height: 100%; }
+.navigation-separator-left { width: 2px; height: 35px; background-image:url('../Imgs/navig_separator.png'); float: left; }
+.navigation-separator-right { width: 2px; height: 35px; background-image:url('../Imgs/navig_separator.png'); float: right; }
+.navigation-button-left { width: auto; height: 100%; padding: 0px 30px 0px 30px; float: left; color:#333333; cursor: hand; }
+.navigation-button-left:hover { background-image:url('../Imgs/navig_button_hover.png'); color:#FFFFFF; cursor: hand; }
+.navigation-button-right { width: auto; height: 100%; padding: 0px 10px 0px 10px; float: right; color:#333333; cursor: hand; }
+.navigation-button-right:hover { background-image:url('../Imgs/navig_button_hover.png'); color:#FFFFFF; cursor: hand; }
+.navigation-button-logout { width: auto; max-width:150px; height:100%; overflow:hidden; padding: 0px 10px 0px 10px; float: right; color:#333333; cursor: hand; }
+.navigation-button-logout:hover { background-image:url('../Imgs/navig_button_hover.png'); color:#FFFFFF; cursor: hand; }
+.navigation-button-logout-hidder { width:auto; text-align:left; white-space:nowrap; color:inherit; cursor: hand; }
+.navigation-link { width:100%;height:100%; font-family: Arial, sans-serif; line-height: 34px; font-size: 10px; color: #333333; cursor: hand; text-decoration:none; }
+.navigation-link:hover { color: #FFFFFF; }
+
+.h-separator { width: 100%; height: 1px; background-color: #91a5b8; overflow:hidden; }
+.v-separator { width: 1px; background-color: #91a5b8; overflow:hidden; }
+
+.main { width: 900px; min-height:100%; margin: 0 auto; margin-top:-135px; background-image: url('../Imgs/background.png'); }
+.center { width: 100%; border: 0px; }
+.content { width: 597px; vertical-align: top; }
+.block { padding: 10px; clear:both; }
+.separator { width:100%; height:1px; border:0px; background-color:#91a5b8; overflow:hidden; }
+
+.content-table { width:577px; margin: 0 auto; border-right: 1px solid #91a5b8; border-bottom: 1px solid #91a5b8; }
+.content-table-td { border-left: 1px solid #91a5b8; border-top: 1px solid #91a5b8; text-align: center; padding:5px; }
+.content-table-htd { border-left: 1px solid #91a5b8; border-top: 1px solid #91a5b8; text-align: center; padding:5px; background-color:#EAEAEA }
+.content-table-header { font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #777777; }
+
+.domain-hidder { width:215px; overflow:hidden; white-space: nowrap; }
+.domain-link { text-decoration:none; color: #497daf; }
+
+.info-bar { width: 299px; vertical-align: top; }
+.info-bar-content { width:100%; vertical-align:middle; text-align:left; }
+
+.paypal-verified { position:absolute; margin-top:40px; margin-left:320px; }
+
+.social-icons { width: 900px; height: 21px; margin: 0 auto; margin-top: -56px; }
+.social-icons-container { width: 299px; height: 16px; float:right; margin-bottom:5px; }
+.social-icons-block { width: 120px; height:16px; float:left; overflow:hidden; }
+.social-icons-button { width:16px; height:16px; float:left; }
+.social-icons-separator { width: 5px; height:16px; float:left; overflow:hidden; }
+.social-icons-img { border: 0px }
+
+.contacts-block { width: 100%; height: 21px; }
+
+.footer { width: 900px; height: 35px; margin-top: -34px; margin: 0 auto; text-align:center; clear:both; }
+.footer-full { width: 100%; height: 35px; background-image:url('../Imgs/footer.png'); margin-top: -34px; text-align:center; }
+.footer-block { width: 100%; height: 35px; }
+
+.img { margin: 0; vertical-align: middle; font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #444444; border: 0px; }
+.img-preview { width:128px; height:128px; font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #444444; border: 1px solid #91a5b8; }
+
+.download-button { text-decoration:none; cursor: pointer; font-family: Arial, sans-serif; font-size: 14px; display: block; width:200px; 
+                   padding: 8px 10px; text-align: center; color: #FFFFFF; background-color: #50c218; border-radius: 4px;
+                   -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; }
+
+.buy-button { text-decoration:none; cursor: pointer; font-family: Arial, sans-serif; font-size: 14px; display: block; width:200px;
+              padding: 8px 10px;  text-align: center; color: #FFFFFF; background-color: #ef7a24; border-radius: 4px;
+              -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; }
+
+.disabled { display:none }
+.canvas-3d { margin: 10px 0px 10px 0px; border: 1px solid #91a5b8; }
+
+/* --- Fonts -------------------------------------------------------------------------------------------------- */
+
+.text { font-family: Verdana, Arial, sans-serif; line-height:17px; font-size: 12px; color: #777777; padding: 10px 10px; }
+.copyright-text { font-family: Verdana, Arial, sans-serif; font-size: 9px; color: #707070; line-height: 35px }
+.img-desc-text { font-family: Verdana, Arial, sans-serif; font-size: 9px; color: #777777; padding: 0px 0px 5px 0px; }
+.username-text { font-family: Arial, sans-serif; line-height: 34px; font-size: 10px; color: #333333;  }
+
+/* --- Blog posts --------------------------------------------------------------------------------------------- */
+
+.blogpost-bar { width:577px; height:20px; margin: 10px 0px 0px 0px; }
+.blogpost-bar-date { width:277px; float:left; overflow:hidden; }
+.blogpost-bar-tweet { width:120px; float:left; overflow:hidden; }
+.blogpost-bar-gpluse { width:80px; float:left; overflow:hidden; }
+.blogpost-bar-flike { width:100px; float:left; overflow:hidden; }
+
+/* --- Store items -------------------------------------------------------------------------------------------- */
+
+.sell-item-info
+{
+	width: 340px;
+	text-align: left;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.sell-item-box
+{
+	font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    border: 1px solid #91a5b8;
+    color: #777777;
+    background-color: #EAEAEA;
+    width: 125px;
+    padding: 5px;
+    text-align:center;
+    float:left;
+}
+
+.sell-item-separator { width :100%; height:7px; overflow:hidden;  }
+
+.sell-item-header {font-size: 14px; font-weight:bolder; padding-top: 5px; padding-bottom: 3px;}
+
+.sell-item-text { line-height:20px;}
+
+.sell-item-buy-link { text-decoration:none; }
+
+.sell-item-buy-button
+{
+	padding: 8px 13px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 80px;
+	text-decoration:none;
+	cursor: pointer;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #ef7a24;
+	border-radius: 4px;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+/* --- Form Elements ------------------------------------------------------------------------------------------ */
+
+fieldset
+{
+    margin: 1em 0px;
+    padding:5px 20px 20px 20px;
+    border: 1px solid #91a5b8;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+	font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    padding: 2px 4px 8px 4px;
+    color: #777777;
+    text-align: left;
+}
+
+.form-text
+{
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    padding-bottom:5px;
+    color: #777777
+}
+
+.form-error-text
+{
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    padding-bottom:5px;
+    padding-top:5px;
+    color: #FF5555;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 2px solid #91a5b8;
+    color: #666666;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 2px solid #91a5b8;
+    color: #666666;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+div.accountInfo
+{
+    width: 400px;
+    margin:0 auto;
+}
+
+.form-button
+{
+	border: 2px solid #91a5b8;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 11px;
+	color: #777777;
+	vertical-align:middle;
+	padding: 3px 10px;
+}

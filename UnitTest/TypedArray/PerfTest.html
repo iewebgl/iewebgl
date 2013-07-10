@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>TypedArray specification unit test for object WebGLPlugin</TITLE>
+
+<script type="text/javascript" src="../../webglhelper.js"></script>
+<script type="text/javascript">
+
+    function TestWrite(arr)
+    {
+        var count = arr.length;
+
+	    var startTime = new Date().getTime();
+	    for (i = 0; i < count; ++i)
+	        arr[i] = i;
+
+	    return (new Date().getTime() - startTime) / 1000.0;
+    }
+
+    function Init() {
+
+        var size = 1000000;
+        var summaryDiv = document.getElementById('TestSummary');
+
+        var arr;
+        var time;
+
+        arr = new Uint32Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" + size + ") = " + time + " seconds<p>";
+
+        arr = new Float32Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" + size + ") = " + time + " seconds<p>";
+
+        arr = new Int8Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" + size + ") = " + time + " seconds<p>";
+
+        arr = new Uint8Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" + size + ") = " + time + " seconds<p>";
+
+        arr = new Int16Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" + size + ") = " + time + " seconds<p>";
+
+        arr = new Uint16Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" + size + ") = " + time + " seconds<p>";
+
+        arr = new Int32Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" + size + ") = " + time + " seconds<p>";
+
+
+        arr = new Array();
+        arr.length = size;
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling Array(" + arr.length + ") = " + time + " seconds<p>";
+
+        var arr2 = new Uint32Array(size);
+        var startTime = new Date().getTime();
+        arr2.set(arr);
+        var time2 = (new Date().getTime() - startTime) / 1000.0;
+        summaryDiv.innerHTML += "<p>1. Uint32Array.set(Array(" + size + ")) = " + time2 + " seconds<p>";
+        summaryDiv.innerHTML += "<p>Sum = " + (time + time2) + " seconds<p>";
+
+        startTime = new Date().getTime();
+        arr2.set(arr);
+        time2 = (new Date().getTime() - startTime) / 1000.0;
+        summaryDiv.innerHTML += "<p>2. Uint32Array.set(Array(" + size + ")) = " + time2 + " seconds<p>";
+        summaryDiv.innerHTML += "<p>Sum = " + (time + time2) + " seconds<p>";
+
+        /*
+        arr = new Float64Array(size);
+        time = TestWrite(arr);
+        summaryDiv.innerHTML += "<p>Filling " + arr + "(" size + ") = " + time + " seconds<p>";
+        */
+    }
+
+</script>
+
+</HEAD>
+
+<BODY onload="Init()">
+
+<DIV id="Test" style="width:640;height:480">
+<script id="WebGLCanvasCreationScript" type="text/javascript">WebGLHelper.CreateGLCanvasInline("WebGL")</script>
+</DIV>
+
+<DIV id="TestSummary" style="width:100%;height:auto">
+</DIV>
+
+</BODY>
+</HTML>

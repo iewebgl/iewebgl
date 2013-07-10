@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>WebGL Clear demo</TITLE>
+
+<script type="text/javascript" src="../../webglhelper.js"></script>
+
+<script type="text/javascript">
+    var gl;
+    var curColor = 1.0;
+    var deltaColor = 0.01;
+    var frameCount = 0;
+
+    function Init()
+    {
+        var cnvContainer = document.getElementById('3DSurface');
+	    gl = WebGLHelper.CreateGLContext(cnvContainer, 'glcanvas');
+        
+        if (gl != null) {
+            var glCtxParent = document.getElementById('glcanvas');
+
+	        glCtxParent.style.width = "100%";
+            glCtxParent.style.height = "100%";
+
+            SetupGL(glCtxParent);
+
+            setInterval(MakeFrame, 10);
+	        setInterval(UpdateFPS, 1000);
+        }
+    }
+
+    function SetupGL(glCtxParent)
+    {
+        gl.viewport(0, 0, glCtxParent.clientWidth, glCtxParent.clientHeight);
+
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.clearDepth(1.0);
+        gl.enable(gl.DEPTH_TEST);
+        gl.depthFunc(gl.LEQUAL);
+    }
+
+    function UpdateFPS()
+    {
+	    var fpsDiv = document.getElementById('FPS');
+	    fpsDiv.innerHTML = frameCount;
+        frameCount = 0;
+    }
+
+    function MakeFrame()
+    {
+        curColor += deltaColor;
+        if (curColor > 1.0)
+        {
+            curColor = 1.0;
+            deltaColor = -deltaColor;
+        }
+        if (curColor < 0.0)
+        {
+            curColor = 0.0;
+            deltaColor = -deltaColor;
+        }
+
+        gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+        gl.clearColor(curColor, 0, 0, 1);
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+	    ++frameCount;
+    }
+
+</script>
+
+</HEAD>
+
+<BODY onload="Init()" style="position:absolute;left:0;top:0;right:0;bottom:0">
+<DIV id="3DSurface" style="position:absolute;left:0;top:0;right:0;bottom:0;zIndex:0">
+</DIV>
+<DIV id="FPS" style="position:absolute;width:50;height:50;zIndex:10;color:#FFFFFF;fontSize:20">
+</DIV>
+</BODY>
+</HTML>

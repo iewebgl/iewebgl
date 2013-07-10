@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../Styles/Samples.css"/>
+    <script src="../Scripts/webglhelper.js" type="text/javascript"></script>
+    <script src="../Scripts/EventHandling.js" type="text/javascript"></script>
+    <script src="../Scripts/Common.js" type="text/javascript"></script>
+    <script src="../Scripts/FPSCounter.js" type="text/javascript"></script>
+    <script src="../Scripts/sylvester.js" type="text/javascript"></script> 
+    <script src="../Scripts/glUtils.js" type="text/javascript"></script>
+    <script src="../Scripts/GeometryUtils.js" type="text/javascript"></script>
+    <script src="../Scripts/MatrixUtils.js" type="text/javascript"></script>
+    <script src="VertexTextureFetch.js" type="text/javascript"></script>
+    <!-- Vertex shader program -->
+    <script id="shader-vs" type="x-shader/x-vertex">
+        precision highp float;
+
+        attribute vec3 aVertexPosition;
+    
+        varying vec4 vColor;
+
+        uniform mat4 uWVPMatrix;
+        uniform vec2 halfPlaneSize;
+        uniform vec2 planeSize;
+        uniform float time;
+        uniform sampler2D uSampler;
+
+        void main(void) {
+            vec2 uv = (aVertexPosition.xz + halfPlaneSize) / planeSize + vec2(sin(time*0.2), cos(time*0.2));
+            vColor = texture2D(uSampler, uv);
+            float height = vColor.r * 3.0;
+            gl_Position = uWVPMatrix * vec4(aVertexPosition.x, height, aVertexPosition.z, 1.0);
+        }
+    </script>
+    <!-- Fragment shader program -->
+    <script id="shader-fs" type="x-shader/x-fragment">
+        precision highp float;
+
+        varying vec4 vColor;
+
+        void main(void) {
+            gl_FragColor = vColor;
+        }
+    </script>
+</head>
+<body>
+    <div id="WebGLCanvasContainer">
+        <div id="FPSCounter"></div>
+        <script id="WebGLCanvasCreationScript" type="text/javascript">
+            WebGLHelper.CreateGLCanvasInline('WebGLCanvas', OnCanvasCreated, OnCanvasFailed)
+        </script>
+    </div>
+</body>
+</html>

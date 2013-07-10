@@ -1,0 +1,87 @@
+HKCU
+{
+	NoRemove Software
+	{
+		NoRemove Classes
+		{
+			ForceRemove IEWebGL.MSIEControl.1 = s 'WebGLPlugin Class'
+			{
+				CLSID = s '{D694F78F-A696-4A03-9841-24BB33AF9F48}'
+			}
+			ForceRemove IEWebGL.MSIEControl = s 'WebGLPlugin Class'
+			{
+				CLSID = s '{D694F78F-A696-4A03-9841-24BB33AF9F48}'
+				CurVer = s 'IEWebGL.MSIEControl.1'
+			}
+
+			NoRemove CLSID
+			{
+				ForceRemove {D694F78F-A696-4A03-9841-24BB33AF9F48} = s 'WebGLPlugin Class'
+				{
+					ProgID = s 'IEWebGL.MSIEControl.1'
+					VersionIndependentProgID = s 'IEWebGL.MSIEControl'
+					ForceRemove Programmable
+					InprocServer32 = s '%MODULE%'
+					{
+						val ThreadingModel = s 'Apartment'
+					}
+					val AppID = s '%APPID%'
+					ForceRemove Control
+					ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 131'
+					MiscStatus = s '0'
+					{
+						'1' = s '%OLEMISC%'
+					}
+					TypeLib = s '{8AEB0ADD-9C74-4113-B8D4-56B424B201F1}'
+					Version = s '1.0'
+				}
+			}
+
+			NoRemove MIME
+			{
+				NoRemove Database
+				{
+					NoRemove 'Content Type'
+					{
+						ForceRemove application/x-webgl
+						{
+							val CLSID = s '{D694F78F-A696-4A03-9841-24BB33AF9F48}'
+						}
+					}
+				}
+			}
+		}
+		NoRemove Microsoft
+		{
+			NoRemove Windows
+			{
+				NoRemove CurrentVersion
+				{
+					NoRemove Ext
+					{
+						NoRemove Stats
+						{
+							ForceRemove {D694F78F-A696-4A03-9841-24BB33AF9F48}
+							{
+								iexplore
+								{
+									val Count = d '00000002' 
+									val Flags = d '00000004' 
+									val Type = d '00000001' 
+									val Time = b 'd807010002000f00120031001c004e03'
+
+									AllowedDomains
+									{
+										*
+										{
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

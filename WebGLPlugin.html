@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>ATL 8.0 test page for object WebGLPlugin</TITLE>
+</HEAD>
+
+<script type="text/javascript">
+    function InitCtx() {
+
+        for (var i = 0; i < 1000000; ++i) {
+            new ArrayBuffer(1);
+        }
+
+    }
+
+</script>
+
+<BODY onload="InitCtx()">
+
+<OBJECT ID="WebGLPlugin" TYPE="application/x-webgl" codebase="http://iewebgl.com/releases/iewebgl.exe" style="width:300px; height:150px"></OBJECT>
+
+</BODY>
+</HTML>

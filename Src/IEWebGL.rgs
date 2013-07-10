@@ -1,0 +1,17 @@
+HKCU
+{
+	Software
+	{
+		Classes
+		{
+			NoRemove AppID
+			{
+				'%APPID%' = s 'IEWebGL'
+				'iewebgl.dll'
+				{
+					val AppID = s '%APPID%'
+				}
+			}
+		}
+	}
+}

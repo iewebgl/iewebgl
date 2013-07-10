@@ -1,0 +1,250 @@
+// IEWebGL.idl : IDL source for IEWebGL
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (IEWebGL.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+#include "WebGL/WebGL.idl"
+
+
+////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(4A670C5D-BB06-41A8-A288-E001A4A59CBA),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IWebGLPlugin : IDispatch
+{
+	[id(1), propget] HRESULT width([out, retval]LONG* retVal);
+	[id(1), propput] HRESULT width([in]VARIANT val);
+	[id(2), propget] HRESULT height([out, retval]LONG *retVal);
+	[id(2), propput] HRESULT height([in]VARIANT val);
+	
+	[id(4)] HRESULT getContext([in]BSTR contextName, [in, optional]VARIANT contextAttributes, [out, retval]IWebGLRenderingContext** retVal);
+	[id(5)] HRESULT toDataURL([in, optional]VARIANT type, [in, optional]VARIANT jpegquality, [out, retval]BSTR* retVal);
+
+	// nonstandard
+	[id(100)] HRESULT getNativeCanvas([out, retval]IDispatch** retVal);
+	[id(200)] HRESULT updateNativeCanvas();
+};
+
+[
+	object,
+	uuid(637009F6-37A9-4D27-85BC-B4364E0787BF),
+	pointer_default(unique)
+]
+interface IIEWebGLBHO : IUnknown
+{
+};
+
+
+[
+	uuid(8AEB0ADD-9C74-4113-B8D4-56B424B201F1),
+	version(1.0),
+]
+library IEWebGLLib
+{
+	importlib("stdole2.tlb");
+	importlib("mshtml.tlb");
+
+	[
+		uuid(D694F78F-A696-4A03-9841-24BB33AF9F48),
+		control
+	]
+	coclass WebGLPlugin
+	{
+		[default] interface IWebGLPlugin;
+	};
+
+	[
+		uuid(424F5422-EFE8-4BBE-BCBC-8EC095EC9A8F)		
+	]
+	coclass IEWebGLBHO
+	{
+		[default] interface IIEWebGLBHO;
+	};
+
+	//////////////////////////////////////////////////////////////////////////
+
+	[
+		uuid(425DF043-792B-4C23-8E57-D1CCBF8C1687)
+	]
+	coclass ArrayBuffer
+	{
+		[default] interface IArrayBuffer;
+	};
+
+	[
+		uuid(71D927BC-F79E-4BC3-8D46-ACB2DB621282)
+	]
+	coclass Uint8Array
+	{
+		[default] interface IUint8Array;
+	};
+
+	[
+		uuid(254BFE05-0837-48C2-A243-7B5CC29E7CC5)
+	]
+	coclass Int8Array
+	{
+		[default] interface IInt8Array;
+	};
+
+	[
+		uuid(FB50E7D2-D09E-4A6B-9396-A58F5AC09944)
+	]
+	coclass Uint16Array
+	{
+		[default] interface IUint16Array;
+	};
+
+	[
+		uuid(0E710FA3-4858-46AE-8609-3D959B17D257)
+	]
+	coclass Int16Array
+	{
+		[default] interface IInt16Array;
+	};
+
+	[
+		uuid(1D45621F-8601-434A-9CDC-61C89B96E76C)
+	]
+	coclass Uint32Array
+	{
+		[default] interface IUint32Array;
+	};
+
+	[
+		uuid(F078A1CD-3355-47E0-8888-04E1CC9E938F)
+	]
+	coclass Int32Array
+	{
+		[default] interface IInt32Array;
+	};
+
+	[
+		uuid(1C59BAB2-21F0-467C-A41A-326925389D5E)
+	]
+	coclass Float32Array
+	{
+		[default] interface IFloat32Array;
+	};
+
+	[
+		uuid(605CFDFF-26C1-4293-8C45-AAEF4DE49C83)
+	]
+	coclass Float64Array
+	{
+		[default] interface IFloat64Array;
+	};
+
+	[
+		uuid(CB600F32-7513-4615-A841-4F40FDC03E4D)
+	]
+	coclass DataArrayView
+	{
+		[default] interface IDataArrayView;
+	};
+
+	//////////////////////////////////////////////////////////////////////////
+
+	[
+		uuid(E864B09B-CED5-4439-B4FA-8E9E7E840595),
+		noncreatable
+	]
+	coclass WebGLRenderingContext
+	{
+		[default] interface IWebGLRenderingContext;
+	};
+
+	[
+		uuid(0D5CE1B4-22A0-4E80-AA48-A0B3B9515E07),
+		noncreatable
+	]
+	coclass WebGLShaderPrecisionFormat
+	{
+		[default] interface IWebGLShaderPrecisionFormat;
+	};
+
+	[
+		uuid(B2838EB2-6FFF-411F-A5C6-18A81D3866D9),
+		noncreatable
+	]
+	coclass WebGLContextAttributes
+	{
+		[default] interface IWebGLContextAttributes;
+	};
+
+	//////////////////////////////////////////////////////////////////////////
+	// WebGL extensions objects
+
+	////////////////////////////////////////////////////////////////
+	//
+	////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(CC2B8A2D-82BC-4014-8BB5-0E788EB0DA6B),
+		dual,
+		pointer_default(unique)
+	]
+	interface IOESTextureFloat : IJSObject
+	{
+
+	};
+
+	////////////////////////////////////////////////////////////////
+	//
+	////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(2CE2C63A-2526-4D8C-8B0B-DA2905CD8B95),
+		dual,
+		pointer_default(unique)
+	]
+	interface IOESStandardDerivatives : IJSObject
+	{
+		[id(101), propget] HRESULT FRAGMENT_SHADER_DERIVATIVE_HINT_OES([out, retval]ULONG* retVal);
+	};
+
+	////////////////////////////////////////////////////////////////
+	//
+	////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(43B375EA-3236-427F-A71D-D45CF2B71DD7),
+		dual,
+		pointer_default(unique)
+	]
+	interface IWebGLCompressedTextureS3TC : IJSObject
+	{
+		/* Compressed Texture Formats */
+		[id(101), propget] HRESULT COMPRESSED_RGB_S3TC_DXT1_EXT([out, retval]ULONG* retVal);
+		[id(102), propget] HRESULT COMPRESSED_RGBA_S3TC_DXT1_EXT([out, retval]ULONG* retVal);
+		[id(103), propget] HRESULT COMPRESSED_RGBA_S3TC_DXT3_EXT([out, retval]ULONG* retVal);
+		[id(104), propget] HRESULT COMPRESSED_RGBA_S3TC_DXT5_EXT([out, retval]ULONG* retVal);
+	};
+
+	////////////////////////////////////////////////////////////////
+	//
+	////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(D79EE8BF-F2E2-46DA-91F0-4D29268C15FC),
+		dual,
+		pointer_default(unique)
+	]
+	interface IEXTTextureFilterAnisotropic : IJSObject
+	{
+		/* Compressed Texture Formats */
+		[id(101), propget] HRESULT TEXTURE_MAX_ANISOTROPY_EXT([out, retval]ULONG* retVal);
+		[id(102), propget] HRESULT MAX_TEXTURE_MAX_ANISOTROPY_EXT([out, retval]ULONG* retVal);
+	};
+};
