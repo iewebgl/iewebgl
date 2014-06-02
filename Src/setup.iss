@@ -6,6 +6,7 @@
 #define MyAppPublisher "IEWebGL"
 #define MyAppURL "http://www.iewebgl.com/"
 #define MyAppFolder "{userappdata}\IEWebGL"
+#define MyTempFolder "{tmp}\IEWebGLDX"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -32,7 +33,7 @@ OutputBaseFilename=iewebgl
 OutputDir=..\bin\
 Compression=lzma
 SolidCompression=yes
-PrivilegesRequired=lowest
+; PrivilegesRequired=lowest
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -47,6 +48,21 @@ Source: "..\3RDParty\DX\Bin\x64\D3DCompiler_43.dll"; DestDir: "{#MyAppFolder}\x6
 Source: "..\3RDParty\DX\Bin\x64\d3dx9_43.dll"; DestDir: "{#MyAppFolder}\x64"; Flags: ignoreversion; Check: IsWin64;
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
+Source: "..\3RDParty\DX\Redistributable\DSETUP.dll"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\DXSETUP.exe"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_D3DCompiler_43_x64.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_D3DCompiler_43_x86.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dcsx_43_x64.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dcsx_43_x86.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dx10_43_x64.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dx10_43_x86.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dx11_43_x64.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dx11_43_x86.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dx9_43_x64.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\Jun2010_d3dx9_43_x86.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\dsetup32.dll"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+Source: "..\3RDParty\DX\Redistributable\dxupdate.cab"; DestDir: "{#MyTempFolder}"; Flags: deleteafterinstall;
+
 [Icons]
 Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
@@ -54,6 +70,7 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 [Run]
 Filename: "{sys}\regsvr32.exe"; Parameters: """{#MyAppFolder}\x86\iewebgl.dll"" /s"; Flags: 32bit runasoriginaluser runhidden
 Filename: "{sys}\regsvr32.exe"; Parameters: """{#MyAppFolder}\x64\iewebgl.dll"" /s"; Flags: 64bit runasoriginaluser runhidden; Check: IsWin64 
+Filename: "{#MyTempFolder}\DXSETUP.exe"; Parameters: "/silent"; StatusMsg: Installing DirectX Runtime Libraries...
 
 [UninstallRun]
 Filename: "{sys}\regsvr32.exe"; Parameters: """{#MyAppFolder}\x86\iewebgl.dll"" /u /s"; Flags: 32bit
